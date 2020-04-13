@@ -1,0 +1,90 @@
+<!--index.wxml-->
+<view class="wraper">
+  <!-- banner区域 -->
+  <view class="swiper">
+    <swiper indicator-dots autoplay interval="4000" duration="500" circular indicator-color="#fff"
+      indicator-active-color="#CE0000">
+      <!-- <block wx:for="{{2}}" wx:key="*this"> -->
+      <swiper-item>
+        <image src="/assets/images/swiper/1.png" mode="widthFix" />
+      </swiper-item>
+      <swiper-item>
+        <image src="/assets/images/swiper/2.png" mode="widthFix" />
+      </swiper-item>
+      <!-- </block> -->
+    </swiper>
+  </view>
+
+  <!-- 视频区域 -->
+  <view class="video bdb">
+    <view class="top">
+      <view class="title">内饰焕新</view>
+      <view class="more">
+        <text>更多选择</text>
+        <view class="arrows">
+          <image src="/assets/images/next_step_icon.png" mode="widthFix" />
+        </view>
+      </view>
+    </view>
+    <view class="video_box">
+      <video title="内饰焕新" controls
+        poster="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1586598827916&di=40f631e7bd4b4397faead2687e944031&imgtype=0&src=http%3A%2F%2Fvdposter.bdstatic.com%2F4568a95c6670b0d828978ea330a773a4.jpeg"
+        src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"></video>
+    </view>
+  </view>
+
+  <!-- 附近商家 -->
+  <view class="nearby bdb">
+    <view class="top">
+      <view class="title">附近商家</view>
+      <view class="more">
+        <text>查看更多</text>
+        <view class="arrows">
+          <image src="/assets/images/next_step_icon.png" mode="widthFix" />
+        </view>
+      </view>
+    </view>
+    <view class="nearby_shops">
+      <scroll-view class="scroll-view" scroll-x="true" style="width: 100%">
+        <view wx:for="{{5}}" wx:key="*this" class="scroll-view-item">
+          <view class="shop_logo"
+            style="background-image: url('/assets/images/business_img1.png');background-repeat:no-repeat; background-size:100% 100%;-moz-background-size:100% 100%;">
+          </view>
+          <view class="shop_info">
+            <view class="shop_name">Quickest快点漆修汽车行</view>
+            <view class="shop_address">
+              <text>270米</text>
+              <text style="margin: 0 15rpx;">|</text>
+              <text>东莞市长安镇荣文路37号</text>
+            </view>
+          </view>
+          <view class="center_line"></view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+
+  <!-- 商品分类 -->
+  <view class="category">
+    <view class="top">
+      <view class="title">商品分类</view>
+      <view class="more">
+        <text>查看更多</text>
+        <view class="arrows">
+          <image src="/assets/images/next_step_icon.png" mode="widthFix" />
+        </view>
+      </view>
+    </view>
+    <view class="flex_box">
+      <view wx:for="{{6}}" wx:key="*this" class="flex_item">
+        <view>
+          <view class="category_icon">
+            <image src="/assets/images/category_icon/material_icon.png" mode="widthFix" />
+          </view>
+          <view class="category_name">内饰配件</view>
+        </view>
+
+      </view>
+    </view>
+  </view>
+</view>

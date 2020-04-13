@@ -1,0 +1,32 @@
+/* pages/login/login.wxss */
+
+.login {
+    margin-top: 200rpx;
+    text-align: center;
+    padding: 0 40rpx;
+    color: #333;
+    font-size: 32rpx;
+}
+
+.img {
+    width: 60%;
+    display: inline-block;
+    margin-bottom: 70rpx;
+}
+
+.btn {
+    margin-top: 300rpx;
+}
+
+.btn button {
+    width: 400rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    font-size: 32rpx;
+    background-color: #0ab807;
+    color: #fff;
+}
+
+.btn button::after {
+    border: none;
+}

@@ -1,0 +1,60 @@
+<!--pages/cart/index.wxml-->
+<view class="wraper">
+  <!-- <view class="nothing">
+    <view class="nothing_icon">
+      <image src="/assets/images/shopping_no_data_icon.png" mode="widthFix"/>
+    </view>
+    <view class="nothing_worlds">购物车空空如也~</view>
+  </view> -->
+
+  <view class="something">
+    <view class="manage">
+      <view class="check_all" bind:tap="checkAll">
+        <view class="check_all_icon">
+          <image wx:if="{{isAllCheck}}" src="/assets/images/choose_click_icon_02.png" mode="widthFix" />
+          <image wx:else src="/assets/images/choose_default_icon.png" mode="widthFix" />
+        </view>
+        <text>全选</text>
+      </view>
+      <view class="show-edi" bind:tap="toEdit">
+        <text wx:if="{{isEdit}}">管理</text>
+        <text wx:else>完成</text>
+      </view>
+    </view>
+
+    <view class="cards">
+      <view wx:for="{{6}}" wx:key="*this" class="cards_item bdb">
+        <view class="cards_check_icon">
+          <image wx:if="{{isAllCheck}}" src="/assets/images/choose_click_icon_02.png" mode="widthFix" />
+          <image wx:else src="/assets/images/choose_default_icon.png" mode="widthFix" />
+        </view>
+        <view class="produ_img" style="background-image: url('/assets/images/swiper/55.png');"></view>
+        <view class="produ_info">
+          <view class="info_top">
+            <view class="produ_name">汽车头枕靠枕车用车载颈椎</view>
+            <van-tag color="#f2f2f2" text-color="#999">颜色：蓝色</van-tag>
+          </view>
+          <view class="info_bottom">
+            <view class="price">￥128.00</view>
+            <view class="stepper">
+              <van-stepper value="{{ value }}" bind:change="stepChange" disable-input />
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="bottom_btn">
+      <view wx:if="{{isEdit}}" class="check_out">
+        <view class="total_price ilb">
+          <text class="total_num">共1件</text>
+          <text>合计: </text>
+          <text class="total_money">￥128.00</text>
+        </view>
+        <view class="pay_btn ilb">结算</view>
+      </view>
+      <view wx:else class="check_out">
+        <view class="del_btn">删除</view>
+      </view>
+    </view>
+  </view>
+</view>

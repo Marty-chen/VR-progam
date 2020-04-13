@@ -1,0 +1,144 @@
+/**index.wxss**/
+swiper {
+  width: 100%;
+  height: calc(100vw*360/750);
+}
+
+.video {
+  padding: 30rpx;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+}
+.title {
+  font-size: 36rpx;
+  font-weight: bold;
+}
+.more {
+  color: #999;
+  font-size: 28rpx;
+}
+.arrows {
+  width: 12rpx;
+  height: 24rpx;
+  display: inline-block;
+  margin-left: 10rpx;
+}
+video {
+  width: 99%;
+  height: 388rpx;
+}
+.video_box {
+  padding: 30rpx 0;
+}
+.nearby .top {
+  padding: 30rpx;
+}
+.nearby_shops {
+  padding-bottom: 60rpx;
+  white-space: nowrap;
+}
+.scroll-view-item {
+  padding-left: 30rpx;
+  display: inline-block;
+}
+.shop_logo {
+  display: inline-block;
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 4rpx;
+  overflow: hidden;
+  vertical-align: middle;
+  
+}
+.shop_info {
+  display: inline-block;
+  vertical-align: middle;
+  width: 350rpx;
+  margin: 0 30rpx;
+}
+.shop_name {
+  margin-bottom: 15rpx;
+}
+.shop_address {
+  font-size: 24rpx;
+  color: #999;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.center_line {
+  display: inline-block;
+  height: 100rpx;
+  width: 1rpx;
+  border-right: 1rpx solid #e5e5e5;
+  vertical-align: middle;
+}
+
+.category {
+  padding: 30rpx;
+}
+.flex_box {
+  display: flex;
+  padding-top: 50rpx;
+  flex-wrap: wrap;
+}
+
+.flex_item {
+  text-align: center;
+  margin-bottom: 30px ;
+  max-width: 33.33%;
+  
+}
+.category_name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* font-size: 30rpx; */
+}
+
+.category_icon {
+  width: 60rpx;
+  display: inline-block;
+  margin-bottom: 10rpx;
+}
+
+.flex_item:nth-of-type(1){
+  padding-right:100rpx;
+}
+
+.flex_item:nth-of-type(2){
+  padding-left:50rpx;
+  padding-right:50rpx;
+}      
+
+.flex_item:nth-of-type(3){
+  padding-left:100rpx;
+} 
+.flex_item:nth-of-type(4){
+  padding-right:100rpx;
+}
+
+.flex_item:nth-of-type(5){
+  padding-left:50rpx;
+  padding-right:50rpx;
+}      
+
+.flex_item:nth-of-type(6){
+  padding-left:100rpx;
+}
+.flex_item:nth-of-type(7){
+  padding-right:100rpx;
+}
+
+.flex_item:nth-of-type(8){
+  padding-left:50rpx;
+  padding-right:50rpx;
+}      
+
+.flex_item:nth-of-type(9){
+  padding-left:100rpx;
+}  
+   

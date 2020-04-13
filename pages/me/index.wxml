@@ -1,0 +1,42 @@
+<!--pages/me/index.wxml-->
+<view class="wraper">
+  <view
+    style="background-image: url('/assets/images/head_portrait_bg.png');background-repeat:no-repeat; background-size:100% 100%;-moz-background-size:100% 100%;"
+    class="top_banner">
+    <view class="userInfo ilb">
+      <view class="user_img"
+        style="background-image: url('/assets/images/business_img1.png');background-repeat:no-repeat; background-size:100% 100%;-moz-background-size:100% 100%;">
+      </view>
+      <view class="user_name">小了白了白</view>
+    </view>
+  </view>
+
+  <view class="cells">
+    <view class="icon ilb">
+      <image src="/assets/images/my_members_icon.png" mode="widthFix" />
+    </view>
+    <text>成为会员</text>
+  </view>
+
+  <view class="cells bdb">
+    <view class="icon ilb">
+      <image src="/assets/images/my_cooperation_icon.png" mode="widthFix" />
+    </view>
+    <text>我要合作</text>
+  </view>
+
+  <view class="cells">
+    <view class="icon ilb" style="width:30rpx">
+      <image src="/assets/images/my_add_icon.png" mode="widthFix" />
+    </view>
+    <text>我的地址</text>
+  </view>
+
+  <view class="cells">
+    <view class="icon ilb">
+      <image src="/assets/images/my_about_us_icon.png" mode="widthFix" />
+    </view>
+    <text>关于我们</text>
+  </view>
+
+</view>

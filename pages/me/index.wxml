@@ -27,7 +27,7 @@
 
   <view class="cells">
     <view class="icon ilb" style="width:30rpx">
-      <image src="/assets/images/my_add_icon.png" mode="widthFix" />
+      <image src="/assets/images/add_icon.png" mode="widthFix" />
     </view>
     <text>我的地址</text>
   </view>

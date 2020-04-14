@@ -29,7 +29,7 @@ Page({
                         wx.setStorageSync('userInfo', userInfo);
                         wx.setStorageSync('loginTokens', res.data);
                         wx.showToast({
-                            title: "登陆成功",
+                            title: "登录成功",
                             icon: 'success',
                             duration: 2000
                         })

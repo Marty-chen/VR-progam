@@ -1,0 +1,163 @@
+/* pages/goods_details/index.wxss */
+swiper {
+  width: 100%;
+  height: calc(100vw*360/750);
+}
+
+.goods {
+  padding: 60rpx 32rpx;
+}
+
+.price {
+  color: var(--priceColor);
+  margin-bottom: 30rpx;
+}
+
+.price text {
+  font-size: 44rpx;
+  font-weight: bold;
+}
+
+.name {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  padding-bottom: 60rpx;
+  border-bottom: 1rpx solid #eee;
+  line-height: 44rpx;
+}
+
+.tags {
+  margin-top: 20rpx;
+}
+
+.tags text {
+  margin-right: 60rpx;
+  font-size: 24rpx;
+}
+
+.recommend {
+  padding: 30rpx 0 30rpx 30rpx;
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: 30rpx;
+}
+
+.goods_box {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.goods_item {
+  width: 32.3333%;
+  margin-right: 1%;
+  margin-bottom: 30rpx;
+}
+
+.goods_img {
+  width: 210rpx;
+  height: 210rpx;
+  border-radius: 4rpx;
+}
+
+.goods_name {
+  width: 95%;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  margin-top: 20rpx;
+  font-size: 28rpx;
+}
+
+.goods_price {
+  color: var(--priceColor);
+  margin-top: 10rpx;
+  font-size: 28rpx;
+}
+
+.goods_price text {
+  font-weight: bold;
+  font-size: 32rpx;
+}
+
+.describe {
+  padding-bottom: 120rpx;
+}
+
+.describe .title {
+  padding: 32rpx;
+}
+.van-popup--bottom.van-popup--round  {
+  border-top-left-radius: 12rpx !important;
+  border-top-right-radius: 12rpx !important;
+}
+.popup_box {
+  padding: 60rpx 30rpx;
+}
+.produ_info {
+  white-space: nowrap;
+  
+}
+.pro_img {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 4rpx;
+  vertical-align: middle;
+  margin-right: 30rpx;
+}
+.pro_right {
+  width: 470rpx;
+  vertical-align: middle;
+}
+.pro_name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.inventory {
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 40rpx;
+}
+.size {
+  padding: 50rpx 0;
+}
+.size_name {
+  font-weight: bold;
+  margin-bottom: 30rpx;
+}
+.size_box {
+  display: flex;
+  flex-wrap: wrap;
+}
+.size_item {
+  padding: 12rpx 15rpx;
+  background-color: #f2f2f2;
+  color: #999;
+  margin-right: 40rpx;
+  border-radius: 4rpx;
+  font-size: 28rpx;
+  margin-bottom: 40rpx;
+}
+.active {
+  background-color: var(--themeColor);
+  color: #fff;
+}
+
+.amount {
+  display: flex;
+  justify-content: space-between;
+}
+.amount_title {
+  font-weight: bold;
+}
+.btn {
+  margin-top: 100rpx;
+}

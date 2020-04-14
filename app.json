@@ -1,51 +1,57 @@
 {
-  "pages":[
+  "pages": [
     "pages/home/index",
     "pages/cart/index",
     "pages/order/index",
     "pages/me/index",
-    "pages/category/index"
-    
+    "pages/goods_list/index",
+    "pages/goods_details/index",
+    "pages/store_list/index",
+    "pages/store_details/index",
+    "pages/car_VR/index",
+    "pages/car_VR/vehicle_type/index",
+    "pages/car_VR/choose_style/index"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "list": [{
-      "pagePath": "pages/home/index",
-      "text": "首页",
-      "iconPath": "assets/images/nav_icon/index_default_icon.png",
-      "selectedIconPath": "assets/images/nav_icon/index_click_icon.png"
-    },
-    {
-      "pagePath": "pages/cart/index",
-      "text": "购物车",
-      "iconPath": "assets/images/nav_icon/shop_default_icon.png",
-      "selectedIconPath": "assets/images/nav_icon/shop_click_icon.png"
-    },
-    {
-      "pagePath": "pages/order/index",
-      "text": "订单",
-      "iconPath": "assets/images/nav_icon/order_default_icon.png",
-      "selectedIconPath": "assets/images/nav_icon/order_click_icon.png"
-    },
-    {
-      "pagePath": "pages/me/index",
-      "text": "我的",
-      "iconPath": "assets/images/nav_icon/my_default_icon.png",
-      "selectedIconPath": "assets/images/nav_icon/my_click_icon.png"
-    }
-  ],
-  "color": "#999",
-  "selectedColor": "#333"
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "text": "首页",
+        "iconPath": "assets/images/nav_icon/index_default_icon.png",
+        "selectedIconPath": "assets/images/nav_icon/index_click_icon.png"
+      },
+      {
+        "pagePath": "pages/cart/index",
+        "text": "购物车",
+        "iconPath": "assets/images/nav_icon/shop_default_icon.png",
+        "selectedIconPath": "assets/images/nav_icon/shop_click_icon.png"
+      },
+      {
+        "pagePath": "pages/order/index",
+        "text": "订单",
+        "iconPath": "assets/images/nav_icon/order_default_icon.png",
+        "selectedIconPath": "assets/images/nav_icon/order_click_icon.png"
+      },
+      {
+        "pagePath": "pages/me/index",
+        "text": "我的",
+        "iconPath": "assets/images/nav_icon/my_default_icon.png",
+        "selectedIconPath": "assets/images/nav_icon/my_click_icon.png"
+      }
+    ],
+    "color": "#999",
+    "selectedColor": "#333"
   },
   "sitemapLocation": "sitemap.json",
-  "usingComponents": {
-    "van-button": "@vant/weapp/button/index",
-    
-    "van-dialog": "@vant/weapp/dialog/index"
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
   }
 }

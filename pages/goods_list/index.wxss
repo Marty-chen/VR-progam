@@ -1,0 +1,40 @@
+/* pages/category/index.wxss */
+.wraper {
+  display: flex;
+  /* justify-content: space-evenly; */
+  flex-wrap: wrap;
+  padding: 60rpx 0 60rpx 30rpx;
+  border-top: 1rpx solid #e5e5e5;
+}
+.goods_item {
+  width: 44%;
+  margin-bottom: 30rpx;
+}
+.goods_item:nth-child(odd){
+  margin-right: 6%;
+}
+
+.goods_img {
+  width: 330rpx;
+  height: 330rpx;
+  border-radius: 4rpx;
+}
+.goods_name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 20rpx;
+  font-size: 28rpx;
+}
+.goods_price {
+  color: var(--priceColor);
+  margin-top: 10rpx;
+  font-size: 28rpx;
+}
+.goods_price text {
+  font-weight: bold;
+  font-size: 32rpx;
+}
+
+
+

@@ -1,0 +1,112 @@
+/* pages/store_list/index.wxss */
+.location {
+  background-color: #fff;
+  padding: 40rpx 32rpx 20rpx 32rpx;
+  border-top: 1rpx solid #F2F2F2;
+  display: flex;
+  justify-content: space-between;
+}
+
+.addre-left {
+  flex: 7;
+}
+
+.addre-right {
+  flex: 2;
+}
+
+.add-icon {
+  width: 18rpx;
+  display: inline-block;
+  margin-right: 6rpx;
+  vertical-align: middle;
+}
+
+.add-icon1 {
+  width: 24rpx;
+  display: inline-block;
+  margin-right: 6rpx;
+  vertical-align: middle;
+}
+
+.address {
+  font-size: 28rpx;
+  vertical-align: middle;
+}
+
+
+.stores {
+  padding: 30rpx 0 60rpx 0;
+}
+.store_item {
+  padding: 30rpx;
+  white-space: nowrap;
+}
+.store_logo {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 4rpx;
+  margin-right: 30rpx;
+  vertical-align: top;
+}
+
+.store_info {
+  height: 140rpx;
+  width: 515rpx;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #999;
+  font-size: 24rpx;
+}
+.store_name {
+  color: #333;
+  font-size: 32rpx;
+}
+.store_addre {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.detail_btn {
+  text-align: right;
+  margin-top: 30rpx;
+}
+.detail_btn button {
+  width: 128rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  font-size: 24rpx;
+  text-align: center;
+  display: inline-block;
+  padding: 0;
+}
+.detail_btn button::after {
+  border: 1rpx solid #333;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.popup {
+  text-align: center;
+  width: 500rpx;
+  margin: 80rpx 30rpx;
+}
+
+.popBtn {
+  margin: 50rpx 0;
+  text-align: center;
+}

@@ -1,0 +1,18 @@
+<!--pages/car_VR/vehicle_type/index.wxml-->
+<view class="wraper">
+  <view class="search">
+    <van-search value="{{ value }}" 
+  placeholder="请输入车系/品牌" 
+  shape="round"
+  />
+  </view>
+
+  <view class="content">
+    <view wx:for="{{8}}" wx:key="*this" class="items">
+      <navigator url="/pages/car_VR/choose_style/index" hover-class="navigator-hover" open-type="navigate">
+        <view class="carLogo ilb" style="background-image: url('/assets/images/swiper/89.png');background-repeat:no-repeat; background-size:100% 100%;-moz-background-size:100% 100%;"></view>
+        <view class="brank_name ilb">奥迪Q5-焕新</view>
+      </navigator>
+    </view>
+  </view>
+</view>

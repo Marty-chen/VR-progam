@@ -1,0 +1,95 @@
+<!--pages/goods_details/index.wxml-->
+<view class="wraper">
+  <view class="swiper">
+    <swiper indicator-dots autoplay interval="4000" duration="500" circular indicator-color="#fff"
+      indicator-active-color="#CE0000">
+      <!-- <block wx:for="{{2}}" wx:key="*this"> -->
+      <swiper-item>
+        <image src="/assets/images/swiper/1.png" mode="widthFix" />
+      </swiper-item>
+      <swiper-item>
+        <image src="/assets/images/swiper/2.png" mode="widthFix" />
+      </swiper-item>
+      <!-- </block> -->
+    </swiper>
+  </view>
+
+  <view class="goods bdb">
+    <view class="price">￥<text>128.00</text></view>
+    <view class="name"><text>汽车头枕靠枕车用车载颈椎枕头护颈枕一对座椅记忆棉腰靠用品</text></view>
+    <view class="tags">
+      <text>· 正品保证</text><text>· 质量有保障</text>
+    </view>
+  </view>
+
+  <!-- 推荐更多 -->
+  <view class="recommend bdb">
+    <view class="title">推荐更多</view>
+    <view class="goods_box">
+      <view wx:for="{{5}}" wx:key="*this" class="goods_item">
+        <navigator url="/pages/goods_details/index" hover-class="navigator-hover" open-type="navigate">
+          <view class="goods_img"
+            style="background-image: url('/assets/images/swiper/55.png');background-repeat:no-repeat; background-size:100% 100%;-moz-background-size:100% 100%;">
+          </view>
+          <view class="goods_name">
+            汽车颈椎枕头护
+            颈枕腰靠用品...
+          </view>
+          <view class="goods_price">￥<text>128.00</text></view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+  <!-- 产品描述 -->
+  <view class="describe">
+    <view class="title">产品描述</view>
+    <view class="imgs">
+      <image src="/assets/images/swiper/11.png" mode="widthFix" />
+      <image src="/assets/images/swiper/22.png" mode="widthFix" />
+      <image src="/assets/images/swiper/33.png" mode="widthFix" />
+    </view>
+  </view>
+
+  <van-goods-action>
+    <van-goods-action-icon open-type="contact" icon="chat-o" text="客服" bind:tap="onClickIcon" />
+    <van-goods-action-icon info="5" icon="cart-o" text="购物车" bind:tap="onClickIcon" />
+    <van-goods-action-button text="加入购物车" type="warning" bind:tap="onClickButton" />
+    <van-goods-action-button text="立即购买" bind:tap="payNow" />
+  </van-goods-action>
+
+  <van-popup 
+  show="{{ isShowPopup }}" 
+  bind:close="closePopup" position="bottom" round
+    closeable>
+    <view class="popup_box">
+      <view class="produ_info">
+        <view class="pro_img ilb"
+          style="background-image: url('/assets/images/swiper/55.png');background-repeat:no-repeat; background-size:100% 100%;-moz-background-size:100% 100%;">
+        </view>
+        <view class="pro_right ilb">
+          <view class="pro_name">汽车头枕靠枕车用车载颈椎枕头fsdfdafgsafgasdf</view>
+          <view class="goods_price">￥<text>128.00</text></view>
+          <view class="inventory">库存: 1000个</view>
+        </view>
+      </view>
+      <view class="size">
+        <view class="size_name">规格</view>
+        <view class="size_box">
+          <block wx:for="{{6}}" wx:key="*this">
+            <view bindtap="sizeChoose" data-index="{{index}}"
+              class="size_item {{currentIndex == index? 'active' : ''}}">30cm*120</view>
+          </block>
+        </view>
+      </view>
+      <view class="amount">
+        <view class="amount_title">购买数量</view>
+        <view class="amount_step">
+          <van-stepper value="{{ value }}" bind:change="stepChange" disable-input />
+        </view>
+      </view>
+      <view class="btn">
+        <button class="cfbtn">确定</button>
+      </view>
+    </view>
+  </van-popup>
+</view>

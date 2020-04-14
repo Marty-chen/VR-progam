@@ -3,8 +3,8 @@
     <view class="img">
         <image src="/assets/imgs/home/landings_img.png" mode="widthFix" />
     </view>
-    <view>您目前还没登陆哦~~</view>
-    <view>请点击 “微信授权” 登陆</view>
+    <view>您目前还没登录哦~~</view>
+    <view>请点击 “微信授权” 登录</view>
 
     <view class="btn">
         <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">

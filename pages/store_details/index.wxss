@@ -1,0 +1,61 @@
+/* pages/store_details/index.wxss */
+.store_info {
+  font-size: 24rpx;
+  padding: 60rpx 32rpx;
+}
+.store_name {
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: 30rpx;
+}
+.phone {
+  margin-bottom: 20rpx;
+}
+.phone_icon {
+  width: 24rpx;
+  margin-left: 30rpx;
+}
+.distance {
+  margin-bottom: 20rpx;
+}
+
+.time {
+  padding: 0 32rpx;
+}
+.time_title {
+  font-weight: bold;
+  padding: 30rpx 0;
+}
+.time_detail {
+  font-size: 24rpx;
+  padding-bottom: 60rpx;
+}
+.time_detail text {
+  margin-right: 30rpx;
+}
+
+.showCase {
+  padding: 0 32rpx 60rpx 32rpx;
+}
+.showCase_title {
+  font-weight: bold;
+  margin: 30rpx 0;
+}
+.showCase_box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.showCase_item {
+  margin-bottom: 30rpx;
+}
+
+.showCase_img {
+  width: 330rpx;
+  height: 280rpx;
+  border-radius: 4rpx;
+  margin-bottom: 20rpx;
+}
+.showCase_name {
+  text-align: center;
+}

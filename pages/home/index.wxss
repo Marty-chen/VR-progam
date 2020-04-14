@@ -29,9 +29,11 @@ swiper {
 video {
   width: 99%;
   height: 388rpx;
+  border-radius: 6rpx;
 }
 .video_box {
   padding: 30rpx 0;
+  
 }
 .nearby .top {
   padding: 30rpx;

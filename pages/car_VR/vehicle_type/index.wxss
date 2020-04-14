@@ -1,0 +1,18 @@
+/* pages/car_VR/vehicle_type/index.wxss */
+.wraper {
+  border-top: 1rpx solid #e5e5e5;
+  padding: 20rpx 32rpx 60rpx 32rpx;
+}
+.content {
+  margin-top: 30rpx;
+}
+.items {
+  margin-bottom: 50rpx;
+}
+.carLogo {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 4rpx;
+  vertical-align: middle;
+  margin-right: 30rpx;
+}

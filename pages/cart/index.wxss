@@ -84,23 +84,7 @@
   display: flex;
   justify-content: space-between;
 }
-.van-stepper__minus {
-  border: 1rpx solid #ccc !important;
-  border-radius: 50% !important;
-  width: 48rpx !important;
-  height: 48rpx !important;
-}
-.van-stepper__input--disabled {
-  color: #333 !important;
-  background-color: #fff !important;
-}
-.van-stepper__plus {
-  border-radius: 50% !important;
-  background-color: #FAC930 !important;
-  color: #fff !important;
-  width: 48rpx !important;
-  height: 48rpx !important;
-}
+
 .bottom_btn {
   position: fixed;
   bottom: 0;

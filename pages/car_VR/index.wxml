@@ -1,0 +1,20 @@
+<!--pages/car_VR/index.wxml-->
+<view class="wraper">
+  <view class="search">
+    <van-search value="{{ value }}" 
+  placeholder="请输入车系/品牌" 
+  shape="round"
+  />
+  </view>
+
+  <view class="content">
+    <view wx:for="{{8}}" wx:key="*this" class="items">
+      <navigator url="/pages/car_VR/vehicle_type/index" hover-class="navigator-hover" open-type="navigate">
+        <view class="carLogo ilb">
+          <image src="/assets/images/business_img1.png" mode="widthFix"/>  
+        </view>
+        <view class="brank_name ilb">保时捷-焕新</view>
+      </navigator>
+    </view>
+  </view>
+</view>

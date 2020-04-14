@@ -14,6 +14,7 @@ page {
 }
 image {
   width: 100%;
+  height: auto;
 }
 
 .bdb {
@@ -22,10 +23,41 @@ image {
 .cfbtn {
   width: 686rpx;
   height: 78rpx;
+  line-height: 78rpx;
   background-color: var(--themeColor);
   border-radius: 40rpx;
   color: #fff;
 }
+.cfbtn::after {
+  border: none;
+}
 .ilb {
   display: inline-block;
+}
+/* 步进器设置圆按钮 */
+.van-stepper__minus {
+  border: 1rpx solid #ccc !important;
+  border-radius: 50% !important;
+  width: 48rpx !important;
+  height: 48rpx !important;
+}
+.van-stepper__input--disabled {
+  color: #333 !important;
+  background-color: #fff !important;
+}
+.van-stepper__plus {
+  border-radius: 50% !important;
+  background-color: #FAC930 !important;
+  color: #fff !important;
+  width: 48rpx !important;
+  height: 48rpx !important;
+}
+.van-stepper__input {
+  width: 55rpx !important;
+  font-weight: bold;
+}
+/* 搜索框加边框 */
+.van-search__content--round {
+  border: 1rpx solid #999;
+  background-color: #fff !important;
 }

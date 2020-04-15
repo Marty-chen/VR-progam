@@ -1,1 +1,38 @@
 /* pages/car_VR/choose_style/index.wxss */
+
+
+
+.title {
+  font-size: 36rpx;
+  font-weight: bold;
+  background-color: var(--themeColor);
+  color: #fff;
+  padding: 0 32rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  width: 100%;
+}
+.car_item {
+  padding: 32rpx;
+  margin-bottom: 32rpx;
+}
+.car_img {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 4rpx;
+  margin-right: 30rpx;
+  vertical-align: middle;
+}
+.car_info {
+  vertical-align: middle;
+}
+.car_name {
+  font-weight: bold;
+  margin-bottom: 15rpx;
+}
+
+.car_color {
+  font-size: 28rpx;
+  color: #999;
+}
+

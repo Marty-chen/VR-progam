@@ -127,6 +127,26 @@
 					"pathName": "pages/car_VR/choose_style/index",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "vip",
+					"pathName": "pages/me/VIP/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的地址",
+					"pathName": "pages/me/address/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "新增，编辑 地址",
+					"pathName": "pages/me/address/new_address/index",
+					"scene": null
 				}
 			]
 		}

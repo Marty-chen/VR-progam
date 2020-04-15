@@ -1,14 +1,19 @@
-// pages/car_VR/choose_style/index.js
+// pages/me/address/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
-  
+
   },
 
+  //去添加地址
+  toNewAddress() {
+    wx.navigateTo({
+      url: '/pages/me/address/new_address/index'
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

@@ -1,14 +1,16 @@
-// pages/car_VR/choose_style/index.js
+// pages/me/address/new_address/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
-  
+    checked: ''
   },
-
+  handleSwitch(e) {
+    console.log(e.detail)
+    this.setData({ checked: e.detail });
+  },
   /**
    * 生命周期函数--监听页面加载
    */

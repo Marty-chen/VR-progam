@@ -161,3 +161,13 @@ swiper {
 .btn {
   margin-top: 100rpx;
 }
+.van-goods-action-button {
+  width: 200rpx !important;
+  
+}
+.van-goods-action-button--first {
+  margin-left: 50rpx !important;
+}
+van-goods-action-icon {
+  margin-right: 35rpx !important;
+}

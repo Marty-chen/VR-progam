@@ -12,31 +12,39 @@
   </view>
 
   <view class="cells">
-    <view class="icon ilb">
-      <image src="/assets/images/my_members_icon.png" mode="widthFix" />
-    </view>
-    <text>成为会员</text>
+    <navigator url="/pages/me/VIP/index" hover-class="none" open-type="navigate">
+      <view class="icon ilb">
+        <image src="/assets/images/my_members_icon.png" mode="widthFix" />
+      </view>
+      <text>成为会员</text>
+    </navigator>
   </view>
 
-  <view class="cells bdb">
-    <view class="icon ilb">
-      <image src="/assets/images/my_cooperation_icon.png" mode="widthFix" />
-    </view>
-    <text>我要合作</text>
-  </view>
-
-  <view class="cells">
-    <view class="icon ilb" style="width:30rpx">
-      <image src="/assets/images/add_icon.png" mode="widthFix" />
-    </view>
-    <text>我的地址</text>
+  <view class="cells bdb" style="height: 116rpx;">
+    <!-- <navigator url="" open-type="navigate"> -->
+      <view class="icon ilb">
+        <image src="/assets/images/my_cooperation_icon.png" mode="widthFix" />
+      </view>
+      <text>我要合作</text>
+    <!-- </navigator> -->
   </view>
 
   <view class="cells">
-    <view class="icon ilb">
-      <image src="/assets/images/my_about_us_icon.png" mode="widthFix" />
-    </view>
-    <text>关于我们</text>
+    <navigator url="/pages/me/address/index" hover-class="none" open-type="navigate">
+      <view class="icon ilb" style="width:30rpx">
+        <image src="/assets/images/add_icon.png" mode="widthFix" />
+      </view>
+      <text>我的地址</text>
+    </navigator>
+  </view>
+
+  <view class="cells">
+    <navigator url="" hover-class="none" open-type="navigate">
+      <view class="icon ilb">
+        <image src="/assets/images/my_about_us_icon.png" mode="widthFix" />
+      </view>
+      <text>关于我们</text>
+    </navigator>
   </view>
 
 </view>

@@ -1,4 +1,8 @@
 /* pages/store_details/index.wxss */
+swiper {
+  width: 100%;
+  height: calc(100vw*360/750);
+}
 .store_info {
   font-size: 24rpx;
   padding: 60rpx 32rpx;
@@ -17,21 +21,6 @@
 }
 .distance {
   margin-bottom: 20rpx;
-}
-
-.time {
-  padding: 0 32rpx;
-}
-.time_title {
-  font-weight: bold;
-  padding: 30rpx 0;
-}
-.time_detail {
-  font-size: 24rpx;
-  padding-bottom: 60rpx;
-}
-.time_detail text {
-  margin-right: 30rpx;
 }
 
 .showCase {

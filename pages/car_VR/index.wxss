@@ -1,10 +1,17 @@
 /* pages/car_VR/index.wxss */
 .wraper {
-  border-top: 1rpx solid #e5e5e5;
+ 
   padding: 20rpx 32rpx 60rpx 32rpx;
 }
+.search {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-top: 1rpx solid #e5e5e5;
+}
 .content {
-  margin-top: 30rpx;
+  margin-top: 120rpx;
 }
 .items {
   margin-bottom: 30rpx;

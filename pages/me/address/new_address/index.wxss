@@ -1,0 +1,13 @@
+/* pages/me/address/new_address/index.wxss */
+.wrapper {
+  padding-bottom: 100rpx;
+}
+.default {
+  display: flex;
+  justify-content: space-between;
+  padding: 50rpx 30rpx;
+}
+
+.save_btn {
+  margin-top: 350rpx;
+}

@@ -1,0 +1,24 @@
+<!--pages/me/address/new_address/index.wxml-->
+<view class="wrapper">
+  <van-cell-group>
+    <van-field value="{{ username }}" required clearable label="收货人" placeholder="请输入收货人姓名" />
+
+    <van-field value="{{ password }}" type="number" label="手机号码" placeholder="请输入手机号码" required clearable />
+    <van-field value="{{ username }}" required clearable label="所在地区" icon="location-o" placeholder="请选择地区"
+      bind:click-icon="onClickIcon" />
+
+    <van-field value="{{ password }}" label="详细地址" placeholder="街道、小区、楼牌号等" required clearable />
+    <van-field value="{{ username }}" type="number" clearable label="邮政编码" placeholder="请输入邮政编码（选填）" />
+
+  </van-cell-group>
+  <view class="default">
+    <view class="default_left">设为默认地址</view>
+    <view class="default_right">
+      <switch style='zoom:0.8' color="#CE0000" size="20" checked="{{switch1Checked}}" bindchange="switch1Change"/>
+      <!-- <van-switch size="20px" bind:change="handleSwitch" checked="{{ checked }}" active-color="#CE0000" inactive-color="#fff" /> -->
+    </view>
+  </view>
+  <view class="save_btn">
+    <button class="cfbtn">保存</button>
+  </view>
+</view>

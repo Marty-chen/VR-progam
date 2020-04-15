@@ -1,0 +1,44 @@
+/* pages/me/address/index.wxss */
+.wrapper {
+  padding-bottom: 100rpx;
+}
+
+.address_box {
+  padding: 32rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+
+.name_phone {
+  margin-bottom: 10rpx;
+}
+
+.name_phone text {
+  margin-right: 50rpx;
+}
+
+.address_detail {
+  color: #999;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.default {
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 32rpx 40rpx 32rpx;
+  font-size: 24rpx;
+}
+.check_icon {
+  width: 32rpx;
+  vertical-align: middle;
+  margin-right: 20rpx;
+}
+
+.center_line {
+  color: #ccc;
+  margin: 0 40rpx;
+}
+.add_btn {
+  margin-top: 200rpx;
+}

@@ -1,10 +1,20 @@
 <!--pages/store_details/index.wxml-->
 <view class="wraper">
-  <view class="banner">
-    <image src="/assets/images/swiper/2.png" mode="widthFix" />
+  <view class="swiper">
+    <swiper indicator-dots autoplay interval="4000" duration="500" circular indicator-color="#fff"
+      indicator-active-color="#CE0000">
+      <!-- <block wx:for="{{2}}" wx:key="*this"> -->
+      <swiper-item>
+        <image src="/assets/images/swiper/1.png" mode="widthFix" />
+      </swiper-item>
+      <swiper-item>
+        <image src="/assets/images/swiper/2.png" mode="widthFix" />
+      </swiper-item>
+      <!-- </block> -->
+    </swiper>
   </view>
   <!-- 店铺资料 -->
-  <view class="store_info bdb">
+  <view class="store_info">
     <view class="store_name">Quickest快点漆修汽车行</view>
     <view class="phone">
       <view class="phone_number ilb">电话: 13820001000</view>
@@ -16,14 +26,6 @@
     <view class="address">地址: 东莞市长安镇S358省道宵边路段齐庆大夏首层89号</view>
   </view>
 
-<!-- 营业时间 -->
-<view class="time bdb">
-  <view class="time_title">营业时间:</view>
-  <view class="time_detail">
-    <text class="">周一至周五 9:00-18:30</text>
-    <text class="">周末 10:00-20:00</text> 
-  </view>
-</view>
 
 <!-- 案例展示 -->
 <view class="showCase">

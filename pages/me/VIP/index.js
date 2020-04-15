@@ -1,14 +1,30 @@
-// pages/car_VR/choose_style/index.js
+// pages/me/VIP/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
-  
+    currentIndex: 1,
+    isCheck: false
   },
-
+  //选择套餐
+  handleClickA() {
+    this.setData({
+      currentIndex: 0
+    })
+  },
+  handleClickB() {
+    this.setData({
+      currentIndex: 1
+    })
+  },
+  //是否同意服务条款
+  check() {
+    this.setData({
+      isCheck: !this.data.isCheck
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

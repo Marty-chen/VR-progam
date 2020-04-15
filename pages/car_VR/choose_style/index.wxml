@@ -1,2 +1,15 @@
 <!--pages/car_VR/choose_style/index.wxml-->
-<text>pages/car_VR/choose_style/index.wxml</text>
+<view class="wraper">
+  <view wx:for="{{2}}" wx:key="*this" class="style_item">
+    <view class="title">纯色款</view>
+    <view wx:for="{{2}}" wx:key="*this" class="car_item">
+      <view class="car_img ilb" style="background-image: url('/assets/images/swiper/33.png');background-repeat:no-repeat; background-size:100% 100%;-moz-background-size:100% 100%;"></view>
+      <view class="car_info ilb">
+        <view class="car_name">奥迪-A4</view>
+        <view class="car_color">华牌皮革配色-米色</view>
+      </view>
+    </view>
+  </view>
+
+
+</view>

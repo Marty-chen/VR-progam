@@ -10,7 +10,11 @@
     "pages/store_details/index",
     "pages/car_VR/index",
     "pages/car_VR/vehicle_type/index",
-    "pages/car_VR/choose_style/index"
+    "pages/car_VR/choose_style/index",
+    "pages/me/VIP/index",
+    "pages/me/address/index",
+    "pages/me/address/new_address/index",
+    "pages/me/about/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

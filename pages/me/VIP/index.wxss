@@ -1,0 +1,107 @@
+/* pages/me/VIP/index.wxss */
+.wraper {
+  padding: 32rpx 32rpx 60rpx 32rpx;
+}
+.user_status {
+  width: 100%;
+  height: 350rpx;
+  display: flex;
+  align-items: center;
+  margin-bottom: 60rpx;
+}
+.content_box {
+  margin-left: 30rpx;
+  white-space: nowrap;
+}
+.user_img {
+  width: 148rpx;
+  height: 148rpx;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 20rpx;
+}
+.user_detail {
+  color: #fff;
+  vertical-align: middle;
+}
+.user_name {
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+
+.vip_status {
+  font-size: 24rpx;
+}
+.set_meal {
+  width: 100%;
+  height: 200rpx;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30rpx;
+  position: relative;
+}
+
+.content_vip {
+ width: 100%;
+ padding: 0 32rpx;
+  white-space: nowrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.set_meal_left {
+  vertical-align: middle;
+}
+
+.set_meal_title {
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.set_meal_words {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.set_meal_price {
+  color: var(--priceColor);
+  vertical-align: middle;
+}
+.set_meal_price text {
+  font-size: 40rpx;
+  font-weight: bold;
+}
+.discount {
+  width: 168rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 20rpx;
+  color: #fff;
+  position: absolute;
+  top: -20rpx;
+  left: 0;
+  text-align: center;
+}
+.active {
+  background-color: #fef7ee;
+}
+
+.check_icon {
+  width: 32rpx;
+  
+  margin-right: 10rpx;
+}
+.check_words {
+  font-size: 24rpx;
+  color: #999;
+  vertical-align: top;
+}
+.clause_red {
+  color: var(--themeColor);
+}
+
+.pay_btn {
+  margin-top: 140rpx;
+  padding-bottom: 50rpx;
+}

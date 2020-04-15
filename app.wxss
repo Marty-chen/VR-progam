@@ -24,6 +24,7 @@ image {
   width: 686rpx;
   height: 78rpx;
   line-height: 78rpx;
+  /* font-size: 30rpx; */
   background-color: var(--themeColor);
   border-radius: 40rpx;
   color: #fff;
@@ -34,6 +35,14 @@ image {
 .ilb {
   display: inline-block;
 }
+
+.bgimg {
+  background-repeat:no-repeat; 
+  background-size:100% 100%;
+  -moz-background-size:100% 100%;
+}
+
+
 /* 步进器设置圆按钮 */
 .van-stepper__minus {
   border: 1rpx solid #ccc !important;

@@ -1,0 +1,89 @@
+<!--pages/refund/index.wxml-->
+<view class="wrapper">
+  <view class="orders">
+    <view wx:for="{{2}}" wx:key="*this" class="order_item bdb">
+      <view class="produ">
+        <view class="pro_left">
+          <view class="produ_img ilb"
+            style="background-image: url('/assets/images/swiper/55.png');background-repeat:no-repeat; background-size:100% 100%;-moz-background-size:100% 100%;">
+          </view>
+          <view class="produ_info ilb">
+            <view class="name">汽车头枕靠枕车用车载颈椎枕头护颈枕腰</view>
+            <view class="pro_color">颜色: 黑色</view>
+          </view>
+        </view>
+        <view class="pro_right">
+          <view class="pro_price">￥<text>128.00</text></view>
+          <view class="pro_num">x 1</view>
+        </view>
+      </view>   
+    </view>
+  </view>
+
+  <view class="cells bdline">
+    <view class="cells_left">
+      <view class="cells_title ilb">退款原因:</view>
+      <view bindtap="handleShowCancel" class="ilb" style="color:#ccc">选择原因</view>
+    </view>
+    <view bindtap="handleShowCancel" class="cells_next_arrow">
+      <image src="/assets/images/next_step_icon.png" mode="widthFix"/> 
+    </view>
+  </view>
+  <view class="cells bdline">
+    <view class="cells_left">
+      <view class="cells_title ilb">退款金额:</view>
+      <view class="cells_content ilb"><text class="price">￥128.00</text></view>
+    </view>
+    <view></view>
+  </view>
+  <view class="cells">
+    <view class="cells_left">
+      <view class="cells_title ilb">退款说明:</view>
+      <view class="cells_content ilb">
+        <input class="weui-input" bindinput="bindKeyInput" placeholder="选填" placeholder-style="color:#ccc"/>
+      </view>
+    </view>
+    <view></view>
+  </view>
+  <view class="cells">
+    <view class="cells_left">
+      <view class="cells_title ilb">上传凭证</view>
+    </view>
+    <view></view>
+  </view>
+  <view class="upload_img">
+    <image src="/assets/images/refund_camera_box.png" mode="widthFix" />
+  </view>
+
+  <view class="sub_btn">
+    <button class="cfbtn">提交</button>
+  </view>
+
+  <van-popup show="{{ isShowCancel }}" closeable round close-icon-position="top-left" position="bottom"
+  bind:close="onCloseCancel">
+  <view class="popup-wraper">
+    <view class="popup-title">
+      <text>取消订单</text>
+    </view>
+    <van-radio-group value="{{ cancelRadio }}" bind:change="onChange">
+      <van-cell-group>
+        <van-cell title="我不想要了" clickable data-name="1" bindtap="onClick">
+          <van-radio checked-color="#CE0000" slot="right-icon" name="1" />
+        </van-cell>
+        <van-cell title="信息填写错误，重新拍" clickable data-name="2" bind:tap="onClick">
+          <van-radio checked-color="#CE0000" slot="right-icon" name="2" />
+        </van-cell>
+        <van-cell title="卖家缺货" clickable data-name="3" bind:tap="onClick">
+          <van-radio checked-color="#CE0000" slot="right-icon" name="3" />
+        </van-cell>
+        <van-cell title="其他原因" clickable data-name="4" bind:tap="onClick">
+          <van-radio checked-color="#CE0000" slot="right-icon" name="4" />
+        </van-cell>
+      </van-cell-group>
+    </van-radio-group>
+    <view class="popup-btns">
+      <button class="cfbtn">确定</button>
+    </view>
+  </view>
+</van-popup>
+</view>

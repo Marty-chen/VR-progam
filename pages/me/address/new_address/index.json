@@ -1,8 +1,7 @@
 {
   "usingComponents": {
     "van-field": "@vant/weapp/field/index",
-    "van-cell-group": "@vant/weapp/cell-group/index",
-    "van-switch": "@vant/weapp/switch/index"
+    "van-cell-group": "@vant/weapp/cell-group/index"
   },
   "navigationBarTitleText": "新增地址"
 }

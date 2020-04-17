@@ -95,10 +95,7 @@ swiper {
 .describe .title {
   padding: 32rpx;
 }
-.van-popup--bottom.van-popup--round  {
-  border-top-left-radius: 12rpx !important;
-  border-top-right-radius: 12rpx !important;
-}
+
 .popup_box {
   padding: 60rpx 30rpx;
 }

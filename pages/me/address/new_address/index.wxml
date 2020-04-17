@@ -15,10 +15,9 @@
     <view class="default_left">设为默认地址</view>
     <view class="default_right">
       <switch style='zoom:0.8' color="#CE0000" size="20" checked="{{switch1Checked}}" bindchange="switch1Change"/>
-      <!-- <van-switch size="20px" bind:change="handleSwitch" checked="{{ checked }}" active-color="#CE0000" inactive-color="#fff" /> -->
     </view>
   </view>
   <view class="save_btn">
-    <button class="cfbtn">保存</button>
+    <button bindtap="saveAddress" class="cfbtn">保存</button>
   </view>
 </view>

@@ -6,7 +6,7 @@
     </view>
     <view class="nothing_worlds">购物车空空如也~</view>
   </view> -->
-
+   
   <view class="something">
     <view class="manage">
       <view class="check_all" bind:tap="checkAll">
@@ -28,7 +28,9 @@
           <image wx:if="{{isAllCheck}}" src="/assets/images/choose_click_icon_02.png" mode="widthFix" />
           <image wx:else src="/assets/images/choose_default_icon.png" mode="widthFix" />
         </view>
-        <view class="produ_img" style="background-image: url('/assets/images/swiper/55.png');"></view>
+        <navigator class="ilb" url="/pages/goods_details/index" hover-class="none" open-type="navigate">
+          <view class="produ_img" style="background-image: url('/assets/images/swiper/55.png');"></view>
+        </navigator>
         <view class="produ_info">
           <view class="info_top">
             <view class="produ_name">汽车头枕靠枕车用车载颈椎</view>
@@ -48,9 +50,9 @@
         <view class="total_price ilb">
           <text class="total_num">共1件</text>
           <text>合计: </text>
-          <text class="total_money">￥128.00</text>
+          <text class="total_money"> ￥<text>128.00</text></text>
         </view>
-        <view class="pay_btn ilb">结算</view>
+        <view class="pay_btn ilb" bindtap="handleToConfirmOrder">结算</view>
       </view>
       <view wx:else class="check_out">
         <view class="del_btn">删除</view>

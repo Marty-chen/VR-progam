@@ -1,0 +1,110 @@
+/* pages/refund/refund_details/index.wxss */
+.status_banner {
+  width: 100%;
+  height: 240rpx;
+  background: var(--themeColor);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 80rpx;
+}
+
+.status_text {
+  color: #fff;
+}
+.status_text_top {
+  font-size: 36rpx;
+}
+.status_time {
+  font-size: 28rpx;
+}
+.status_img {
+  width: 145rpx;
+}
+
+.big_title {
+  font-size: 36rpx;
+  font-weight: bold;
+  padding:  32rpx;
+  
+}
+
+.order_item {
+  padding: 0 32rpx 30rpx 32rpx;
+  
+}
+
+
+.produ {
+  display: flex;
+  justify-content: space-between;
+}
+
+.produ_img {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 4rpx;
+  vertical-align: middle;
+  margin-right: 20rpx;
+}
+
+.produ_info {
+  vertical-align: top;
+  
+}
+.name {
+  width: 320rpx;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.pro_color {
+  font-size: 24rpx;
+  color: #999;
+  padding-top: 40rpx;
+}
+
+.pro_right {
+  font-size: 28rpx;
+  text-align: right;
+  
+}
+.pro_price {
+  font-size: 28rpx;
+}
+.pro_price text {
+  font-size: 36rpx;
+}
+.pro_num {
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 30rpx;
+}
+.cells {
+  padding: 32rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.cells_title {
+  color: #999;
+  margin-right: 60rpx;
+}
+.cell_content text{
+  color: var(--priceColor);
+
+}
+.imgs {
+  padding: 0 32rpx 100rpx 32rpx;
+  white-space: nowrap;
+}
+
+.imgs_item {
+  width: 200rpx;
+  height: 200rpx;
+  margin: 0 30rpx 30rpx 0;
+}
+
+

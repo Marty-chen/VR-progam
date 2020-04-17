@@ -1,37 +1,35 @@
 <!--pages/store_list/index.wxml-->
-<view class="wraper">
-  <view class="location">
-    <view class="addre-left">
-      <view class="add-icon">
+<view class="wrapper">
+  <view class="search_box">
+    <view class="location">
+      <view class="addre-left">
+        <view class="add-icon">
           <image src="/assets/images/add_icon.png" mode="widthFix" />
+        </view>
+        <text bind:tap="handleRefreshLocation" style="color:#ff7c2d;font-size:28rpx;margin-right:15rpx;"
+          class="address">刷新</text>
+        <text class="address">{{address.recommend}}</text>
       </view>
-     
-      <text bind:tap="handleRefreshLocation" style="color:#ff7c2d;font-size:28rpx;margin-right:15rpx;" class="address">刷新</text>
-      <text class="address">{{address.recommend}}</text>
-
-  </view>
-
-  <view bind:tap="handleGetLocation" class="addre-right">
-      <view class="add-icon1">
+      <view bind:tap="handleGetLocation" class="addre-right">
+        <view class="add-icon1">
           <image src="/assets/images/reposition_icon.png" mode="widthFix" />
+        </view>
+        <text class="address" style="color:#ff7c2d;font-size:30rpx">手动定位</text>
       </view>
-      <text class="address" style="color:#ff7c2d;font-size:30rpx">手动定位</text>
+    </view>
+    <van-search value="{{ value }}" placeholder="请输入门店名称" shape="round" />
   </view>
-  </view>
-
-  <van-search value="{{ value }}" 
-  placeholder="请输入门店名称" 
-  shape="round"
-  />
 
   <view class="stores">
     <view wx:for="{{6}}" wx:key="*this" class="store_item bdb">
-      <view class="store_logo ilb" style="background-image: url('/assets/images/swiper/55.png');background-repeat:no-repeat; background-size:100% 100%;-moz-background-size:100% 100%;"></view>
+      <view class="store_logo ilb"
+        style="background-image: url('/assets/images/swiper/55.png');background-repeat:no-repeat; background-size:100% 100%;-moz-background-size:100% 100%;">
+      </view>
       <view class="store_info ilb">
         <view class="store_name">Quickest快点漆修汽车行</view>
         <view class="store_addre">
           <text class="">270米 ｜ </text>
-          <text class="">东莞市长安镇荣文路与358省道交叉口dfghghgfh</text>  
+          <text class="">东莞市长安镇荣文路与358省道交叉口dfghghgfh</text>
         </view>
       </view>
       <view class="detail_btn">
@@ -50,13 +48,14 @@
 
   <van-popup round show="{{ showAuthorized }}" bind:close="closeAuthorized">
     <view class="popup">
-        获取定位失败，请打开系统定位，并在设置页面允许本小程序使用位置信息。
+      获取定位失败，请打开系统定位，并在设置页面允许本小程序使用位置信息。
     </view>
 
     <view class="popBtn">
-        <button bindtap="handleClosePopup" class="default" size="mini" type="default" plain="default" open-type="openSetting">
-            去授权
-        </button>
+      <button bindtap="handleClosePopup" class="default" size="mini" type="default" plain="default"
+        open-type="openSetting">
+        去授权
+      </button>
     </view>
-</van-popup>
+  </van-popup>
 </view>

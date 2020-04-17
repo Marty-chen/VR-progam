@@ -1,0 +1,76 @@
+<!--pages/cart/confirm_order/index.wxml-->
+<view class="wrapper">
+  <!-- 地址 -->
+  <view class="address">
+    <!-- 没有地址记录 -->
+    <view wx:if="{{1}}">
+      <navigator class="no_addr" url="/pages/me/address/new_address/index" hover-class="none" open-type="navigate">
+        <view class="ilb">您还没地址记录哦，赶快去添加一个吧！</view>
+        <view class="next_icon ilb">
+          <image src="/assets/images/next_step_icon.png" mode="widthFix" />
+        </view>
+      </navigator>
+    </view>
+    <!-- 有地址记录 -->
+    <view wx:else class="has_addr" bindtap="handleChangeAddr">
+      <view class="addre_info">
+        <view class="name_phone">
+          <text>小白</text>
+          <text>13585545458</text>
+        </view>
+        <view class="addr_detail">广东省东莞市 长安镇长青南路1号</view>
+      </view>
+      <view class="next_icon ilb">
+        <image src="/assets/images/next_step_icon.png" mode="widthFix" />
+      </view>
+    </view>
+  </view>
+  <!-- 颜色线 -->
+  <view class="line_img">
+    <image src="/assets/images/line.png" mode="widthFix" />
+  </view>
+  <!-- 商品 -->
+  <view class="cards">
+    <view wx:for="{{2}}" wx:key="*this" class="cards_item">
+      <view class="produ_img bgimg" style="background-image: url('/assets/images/swiper/55.png');"></view>
+      <view class="produ_info">
+        <view class="info_top">
+          <view class="produ_name">汽车头枕靠枕车用车载颈椎</view>
+          <van-tag color="#f2f2f2" text-color="#999">颜色：蓝色</van-tag>
+        </view>
+        <view class="info_bottom">
+          <view class="price">￥<text>128.00</text></view>
+          <view class="info_num">x 1</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 商品总价 -->
+  <view class="cell">
+    <view class="cell_title">商品总价</view>
+    <view class="cell_price">￥ 128.00</view>
+  </view>
+  <view class="cell bdb">
+    <view class="cell_title">运费</view>
+    <view class="cell_price">￥ 0.00</view>
+  </view>
+  <!-- 备注 -->
+  <view class="notes">
+    <view class="notes_title ilb">订单备注</view>
+    <view class="notes_inpu ilb">
+      <input class="weui-input" placeholder="选填，可给商家留言/备注" bindinput="bindKeyInput" placeholder-style="color:#ddd" />
+    </view>
+  </view>
+
+  <view class="bottom_btn">
+    <view class="check_out">
+      <view class="total_price ilb">
+        <text class="total_num">共1件</text>
+        <text>合计: </text>
+        <text class="total_money"> ￥<text>128.00</text></text>
+      </view>
+      <view class="pay_btn ilb" bindtap="handleToConfirmOrder">提交订单</view>
+    </view>
+  </view>
+</view>

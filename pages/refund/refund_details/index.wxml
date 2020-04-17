@@ -1,0 +1,81 @@
+<!--pages/refund/refund_details/index.wxml-->
+<view class="wrapper">
+  <view class="status_banner">
+    <view class="status_text">
+      <view class="status_text_top">
+        <text>卖家已同意退款</text>
+        <!-- <text>交易成功</text>
+        <text>交易关闭</text>
+        <text>买家已付款</text>
+        <text>等待买家付款</text> -->
+      </view>
+      <view class="status_time">
+        <text>2020年3月18日  14:57</text>
+        <!-- <text>剩5天23小时自动关闭</text> -->
+      </view>
+    </view>
+    <view class="status_img">
+      <image src="/assets/images/receiving_goods_icon.png" mode="widthFix" />
+      <!-- <image src="/assets/images/payment_order_icon.png" mode="widthFix"/>  
+      <image src="/assets/images/dea_order_icon.png" mode="widthFix"/> 
+      <image src="/assets/images/shipped_order_icon.png" mode="widthFix"/> 
+      <image src="/assets/images/close_order_icon.png" mode="widthFix"/>  -->
+    </view>
+  </view>
+
+  <view class="big_title">退款信息</view>
+
+  <view class="orders">
+    <view wx:for="{{2}}" wx:key="*this" class="order_item">
+      <view class="produ">
+        <view class="pro_left">
+          <view class="produ_img ilb"
+            style="background-image: url('/assets/images/swiper/55.png');background-repeat:no-repeat; background-size:100% 100%;-moz-background-size:100% 100%;">
+          </view>
+          <view class="produ_info ilb">
+            <view class="name">汽车头枕靠枕车用车载颈椎枕头护颈枕腰</view>
+            <view class="pro_color">颜色: 黑色</view>
+          </view>
+        </view>
+        <view class="pro_right">
+          <view class="pro_price">￥<text>128.00</text></view>
+          <view class="pro_num">x 1</view>
+        </view>
+      </view>   
+    </view>
+  </view>
+
+  <view class="cells" style="padding-top: 0;">
+    <view class="cells_title ilb">退款原因:</view>
+    <view class="cell_content ilb">其他</view>
+  </view>
+
+  <view class="cells">
+    <view class="cells_title ilb">退款金额:</view>
+    <view class="cell_content ilb"><text>￥128.00</text></view>
+  </view>
+  <view class="cells">
+    <view class="cells_title ilb">退款说明:</view>
+    <view class="cell_content ilb">不想要了</view>
+  </view>
+  <view class="cells">
+    <view class="cells_title ilb">申请时间:</view>
+    <view class="cell_content ilb">2020-03-17  14:20</view>
+  </view>
+  <view class="cells">
+    <view class="cells_title ilb">成交时间:</view>
+    <view class="cell_content ilb">2020-03-17  14:20</view>
+  </view>
+  <view class="cells" style="border-bottom: 16rpx solid #f7f7f7;">
+    <view class="cells_title ilb">退款编号:</view>
+    <view class="cell_content ilb">526412069120</view>
+  </view>
+
+  <view class="cells" style="border:none">上传凭证</view>
+  <view class="imgs">
+    <view wx:for="{{3}}" class="imgs_item ilb">
+      <image src="/assets/images/swiper/33.png" mode="widthFix" />
+    </view>
+  </view>
+    
+</view>

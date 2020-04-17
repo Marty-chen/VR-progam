@@ -31,6 +31,12 @@ Page({
     //   this.setData({ value });
     // }, 500);
   },
+  //去结算
+  handleToConfirmOrder() {
+    wx.navigateTo({
+      url: '/pages/cart/confirm_order/index'
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

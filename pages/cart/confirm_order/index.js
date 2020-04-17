@@ -1,21 +1,24 @@
-// pages/category/index.js
+// pages/cart/confirm_order/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    
   },
 
+  //切换地址
+  handleChangeAddr() {
+    wx.navigateTo({
+      url: '/pages/me/address/index'
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options.name)
-    // wx.setNavigationBarTitle({
-    //   title: options.name
-    // })
+
   },
 
   /**

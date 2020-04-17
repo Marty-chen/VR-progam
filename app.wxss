@@ -70,3 +70,8 @@ image {
   border: 1rpx solid #999;
   background-color: #fff !important;
 }
+/* popup组件加圆角 */
+.van-popup--bottom.van-popup--round  {
+  border-top-left-radius: 12rpx !important;
+  border-top-right-radius: 12rpx !important;
+}

@@ -1,4 +1,14 @@
 /* pages/store_list/index.wxss */
+.wrapper {
+  position: relative;
+}
+.search_box {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: #fff;
+  z-index: 999;
+}
 .location {
   background-color: #fff;
   padding: 40rpx 32rpx 20rpx 32rpx;
@@ -37,6 +47,7 @@
 
 .stores {
   padding: 30rpx 0 60rpx 0;
+  margin-top: 220rpx;
 }
 .store_item {
   padding: 30rpx;

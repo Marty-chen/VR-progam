@@ -73,7 +73,7 @@
 
   <view class="cells" style="border:none">上传凭证</view>
   <view class="imgs">
-    <view wx:for="{{3}}" class="imgs_item ilb">
+    <view wx:for="{{3}}" wx:key="*this" class="imgs_item ilb">
       <image src="/assets/images/swiper/33.png" mode="widthFix" />
     </view>
   </view>

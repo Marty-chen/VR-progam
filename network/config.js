@@ -2,12 +2,11 @@ export let head = {
     platform: 'WAP',
     version: '1.0.0',
     timestamp: Date.parse(new Date()),
-    "accept": "*/*",
-    "content-type": "application/json"
+    // "accept": "*/*",
+    // "content-type": "application/json"
 }
 
-// export const baseURL = 'http://192.168.101.233:11000'
-export const baseURL = 'https://kjcb.bdxbuyer.cn';
+export const baseURL = 'http://192.168.101.233:23000';
 export const timeout = 15000;
 
 //图片域名

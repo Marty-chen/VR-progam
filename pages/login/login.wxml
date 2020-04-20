@@ -1,9 +1,9 @@
 <!--pages/login/login.wxml-->
 <view class="login">
     <view class="img">
-        <image src="/assets/imgs/home/landings_img.png" mode="widthFix" />
+        <image src="/assets/images/business_img1.png" mode="widthFix" />
     </view>
-    <view>您目前还没登录哦~~</view>
+    <!-- <view>您目前还没登录哦~~</view> -->
     <view>请点击 “微信授权” 登录</view>
 
     <view class="btn">

@@ -1,8 +1,8 @@
 import request from './network.js';
-
-export function getStore(opts) {
+//店铺列表
+export function shopList(opts) {
     return request({
-        url: '/api/usr/store/nearbyMerchantOrder',
+        url: '/api/store/list.pub',
         data: opts,
         method: 'post'
     })

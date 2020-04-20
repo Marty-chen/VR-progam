@@ -1,0 +1,42 @@
+/* pages/news/news_list/index.wxss */
+.wrapper {
+  padding: 40rpx 32rpx 150rpx 32rpx;
+}
+
+.news_title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  font-weight: bold;
+  
+}
+
+.news_time {
+  font-size: 24rpx;
+  display: flex;
+  justify-content: space-between;
+  color: #999;
+  margin: 40rpx 0;
+}
+.eye_icon {
+  font-size: 32rpx;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+
+.news_details {
+  font-size: 28rpx;
+  color: #666;
+}
+.news_details view {
+  padding-bottom: 30rpx;
+}
+.news_img {
+  width: 100%;
+  border-radius: 4rpx;
+  overflow: hidden;
+  
+}
+

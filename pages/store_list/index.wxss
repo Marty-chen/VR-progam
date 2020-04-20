@@ -59,6 +59,7 @@
   border-radius: 4rpx;
   margin-right: 30rpx;
   vertical-align: middle;
+  overflow: hidden;
 }
 
 .store_info {
@@ -69,7 +70,7 @@
   font-size: 24rpx;
   display: inline-flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
 }
 .store_name {
   color: #333;
@@ -97,6 +98,14 @@
 }
 .detail_btn button::after {
   border: 1rpx solid #333;
+}
+
+.no_more {
+  text-align: center;
+  padding-bottom: 16rpx;
+  background-color: #f7f7f7;
+  font-size: 24rpx;
+  color: #999;
 }
 
 

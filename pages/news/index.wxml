@@ -1,0 +1,21 @@
+<!--pages/news/index.wxml-->
+<view class="wrapper">
+  <view wx:for="{{5}}" wx:key="*this">
+    <navigator class="news_item" url="/pages/news/news_details/index" hover-class="navigator-hover"
+      open-type="navigate">
+      <view class="news_item_left">
+        <view class="news_title">小改怡情，本田十代雅阁内饰改装案例及注意事项分享</view>
+        <view class="news_time">
+          <view class="news_time_left">昨天</view>
+          <view class="news_time_right">
+            <van-icon class="eye_icon" name="eye-o" />
+            <text>128</text>
+          </view>
+        </view>
+      </view>
+      <view class="news_item_right">
+        <image src="/assets/images/swiper/33.png" mode="widthFix" />
+      </view>
+    </navigator>
+  </view>
+</view>

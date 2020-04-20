@@ -8,15 +8,11 @@ function request(options) {
     wx.showLoading({
         title: '加载中',
     })
-    let header;
-    if (options.url.includes("/home") || options.url.includes("/nearbyMerchantDetail")) {
-        header = head
-    } else {
-        header = {
+    let header = {
             ...head,
-            token: wx.getStorageSync('loginTokens').token || ''
+            token: wx.getStorageSync('token') || ''
         }
-    }
+    
     return new Promise((resolve, reject) => {
         wx.request({
             url: baseURL + options.url,

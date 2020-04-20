@@ -11,3 +11,6 @@
 .save_btn {
   margin-top: 350rpx;
 }
+.van-field__input--disabled {
+  color: #333 !important;
+}

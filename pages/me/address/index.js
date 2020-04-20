@@ -1,13 +1,88 @@
 // pages/me/address/index.js
+import {
+  addressList,
+  addressUpdate,
+  deleteAdd
+} from "../../../network/address"
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    addrList: []
   },
+  //是否默认
+  checkDefault(e) {
+    let index = e.currentTarget.dataset.index;
+    if (this.data.addrList[index].isDefault == 1) return;
+    wx.showModal({
+      title: '提示',
+      content: '您确定要把此地址设为默认地址？',
+      success:(res)=> {
+        if (res.confirm) {
+          let parm = {
+            addressId: this.data.addrList[index].addressId,
+            isDefault: 1
+          }
+          addressUpdate(parm).then(res => {
+            wx.showToast({
+                  title: '设置成功',
+                  icon: 'success',
+                  duration: 2000
+                })
+                setTimeout(()=>{
+                  this.getAddressList()
+                },2000)
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
 
+   
+  },
+  //编辑地址
+  handleEditAddr(e) {
+    let index = e.currentTarget.dataset.index;
+    let parm = {
+      ...this.data.addrList[index]
+    }
+    wx.navigateTo({
+      url: '/pages/me/address/new_address/index',
+      success: function(res) {
+        // 通过eventChannel向被打开页面传送数据
+        res.eventChannel.emit('acceptDataFromOpenerPage', { data: {parm} })
+      }
+    })
+  },
+  //删除地址
+  delAddress(e) {
+    let index = e.currentTarget.dataset.index;
+    console.log(index)
+    let parm = [this.data.addrList[index].addressId];
+    wx.showModal({
+      title: '删除地址',
+      content: '您确定要删除该地址？',
+      success:(res)=> {
+        if (res.confirm) {
+          deleteAdd(parm).then(() => {
+            wx.showToast({
+              title: '删除成功',
+              icon: 'success',
+              duration: 2000
+            })
+            setTimeout(()=>{
+              this.getAddressList()
+            },2000)
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+  },
   //去添加地址
   toNewAddress() {
     wx.navigateTo({
@@ -19,10 +94,18 @@ Page({
     let router = getCurrentPages()
     console.log(router)
     //判断是否在购物车跳转过来的
-    if(router[1].route == "pages/cart/confirm_order/index") {
+    // if(router[1].route == "pages/cart/confirm_order/index") {
 
-    }
-    
+    // }
+  },
+
+  //网络请求地址列表
+  getAddressList() {
+    addressList().then(res => {
+      this.setData({
+        addrList: res.data
+      })
+    })
   },
   /**
    * 生命周期函数--监听页面加载
@@ -42,7 +125,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getAddressList()
   },
 
   /**

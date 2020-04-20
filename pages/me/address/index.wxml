@@ -1,27 +1,27 @@
 <!--pages/me/address/index.wxml-->
 <view class="wrapper">
   <view class="address">
-    <view wx:for="{{3}}" wx:key="*this" class="address_item bdb">
+    <view wx:for="{{addrList}}" wx:key="index" class="address_item bdb">
       <view bindtap="handleChooseAddr" class="address_box">
         <view class="name_phone">
-          <text>小白</text>
-          <text>13800055545</text>
+          <text>{{item.userName}}</text>
+          <text>{{item.phone}}</text>
         </view>
-        <view class="address_detail">广东省东莞市 长安镇长青南路1号</view>
+        <view class="address_detail">{{item.disName + item.detailAddress}}</view>
       </view>
-      <view class="default">
-        <view class="isCheck" bind:tap="check">
+      <view class="default" >
+        <view class="isCheck" bind:tap="checkDefault" data-index="{{index}}">
           <view class="check_icon ilb">
-            <image wx:if="{{!isCheck}}" src="/assets/images/choose_click_icon_02.png" mode="widthFix" />
+            <image wx:if="{{item.isDefault}}" src="/assets/images/choose_click_icon_02.png" mode="widthFix" />
             <image wx:else src="/assets/images/choose_default_icon.png" mode="widthFix" />
           </view>
           <text>设为默认</text>
         </view>
 
         <view class="handle_btns">
-          <text>编辑</text>
+          <text bind:tap="handleEditAddr" data-index="{{index}}">编辑</text>
           <text class="center_line">|</text>
-          <text>删除</text>
+          <text bindtap="delAddress" data-index="{{index}}">删除</text>
         </view>
       </view>
     </view>

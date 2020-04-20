@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/home/index",
+    "pages/news/index",
+    "pages/news/news_details/index",
     "pages/cart/index",
     "pages/cart/confirm_order/index",
     "pages/order/index",
@@ -18,7 +20,8 @@
     "pages/me/VIP/index",
     "pages/me/address/index",
     "pages/me/address/new_address/index",
-    "pages/me/about/index"
+    "pages/me/about/index",
+    "pages/login/login"
   ],
   "window": {
     "backgroundTextStyle": "light",

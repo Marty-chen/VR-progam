@@ -23,7 +23,7 @@
     height: 90rpx;
     line-height: 90rpx;
     font-size: 32rpx;
-    background-color: #0ab807;
+    background-color: var(--themeColor);
     color: #fff;
 }
 

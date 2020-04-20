@@ -81,7 +81,12 @@
     </view>
   </view>
   <!-- 订单信息 -->
-  <view class="order_info">
+  <view class="order_info bdb">
+    <view class="cells_nobtw">
+      <view class="cells_nobtw_title">
+        <text style="color: #333;">订单信息</text>
+      </view>
+    </view>
     <view class="cells_nobtw">
       <view class="cells_nobtw_title">
         <text>订单编号:</text>
@@ -91,13 +96,16 @@
         <image src="/assets/images/copy_icon.png" mode="widthFix" />
       </view>
     </view>
-
     <view class="cells_nobtw">
       <view class="cells_nobtw_title">
         <text>下单时间:</text>
         2020-2-16 19:01
       </view>
     </view>
+  </view>
+  <view class="telPhone">
+    <button open-type="contact" class="tel_btn" icon="service">联系商家</button>
+    <van-icon class="tel_icon" name="service" />
   </view>
 
   <view class="bottom_btns">

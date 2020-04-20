@@ -17,26 +17,29 @@
         <text class="address" style="color:#ff7c2d;font-size:30rpx">手动定位</text>
       </view>
     </view>
-    <van-search value="{{ value }}" placeholder="请输入门店名称" shape="round" />
+    <van-search value="{{ storeName }}" placeholder="请输入门店名称" shape="round" />
   </view>
 
   <view class="stores">
-    <view wx:for="{{6}}" wx:key="*this" class="store_item bdb">
+    <view wx:for="{{shop_list}}" wx:key="index" class="store_item bdb">
       <view class="store_logo ilb"
-        style="background-image: url('/assets/images/swiper/55.png');background-repeat:no-repeat; background-size:100% 100%;-moz-background-size:100% 100%;">
+        style="background-image: url('{{item.logo}}');background-repeat:no-repeat; background-size:100% 100%;-moz-background-size:100% 100%;">
       </view>
       <view class="store_info ilb">
-        <view class="store_name">Quickest快点漆修汽车行</view>
+        <view class="store_name">{{item.storeName}}</view>
         <view class="store_addre">
-          <text class="">270米 ｜ </text>
-          <text class="">东莞市长安镇荣文路与358省道交叉口dfghghgfh</text>
+          <text wx:if="{{item.distance}}" class="">{{item.distance}}米 ｜ </text>
+          <text class="">{{item.address}}</text>
         </view>
       </view>
       <view class="detail_btn">
-        <navigator url="/pages/store_details/index" hover-class="navigator-hover" open-type="navigate">
+        <navigator url="/pages/store_details/index?storeId={{item.storeId}}" hover-class="navigator-hover" open-type="navigate">
           <button>店铺详情</button>
         </navigator>
       </view>
+    </view>
+    <view wx:if="{{showNoMore}}" class="no_more">
+      没有更多数据了哦！
     </view>
   </view>
 

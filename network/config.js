@@ -2,7 +2,7 @@ export let head = {
     platform: 'WAP',
     version: '1.0.0',
     timestamp: Date.parse(new Date()),
-    // "accept": "*/*",
+    // "accept": "application/json",
     // "content-type": "application/json"
 }
 

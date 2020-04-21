@@ -7,3 +7,12 @@ export function shopList(opts) {
         method: 'post'
     })
 }
+
+//店铺详情
+export function shopDetail(opts) {
+    return request({
+        url: '/api/store/detail.pub',
+        data: opts,
+        method: 'post'
+    })
+}

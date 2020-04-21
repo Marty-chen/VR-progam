@@ -3,39 +3,39 @@
   <view class="swiper">
     <swiper indicator-dots autoplay interval="4000" duration="500" circular indicator-color="#fff"
       indicator-active-color="#CE0000">
-      <!-- <block wx:for="{{2}}" wx:key="*this"> -->
-      <swiper-item>
-        <image src="/assets/images/swiper/1.png" mode="widthFix" />
+
+      <swiper-item wx:for="{{shop.storeImg}}" wx:key="index">
+        <image bindtap="handleSwiperPreviewImg" data-index="{{index}}" src="{{item}}" mode="widthFix" />
       </swiper-item>
-      <swiper-item>
-        <image src="/assets/images/swiper/2.png" mode="widthFix" />
-      </swiper-item>
-      <!-- </block> -->
+
     </swiper>
   </view>
   <!-- 店铺资料 -->
   <view class="store_info">
-    <view class="store_name">Quickest快点漆修汽车行</view>
+    <view class="store_name">{{shop.stroeName}}</view>
     <view class="phone">
-      <view class="phone_number ilb">电话: 13820001000</view>
-      <view class="phone_icon ilb">
+      <view class="phone_number ilb">电话: {{shop.phone}}</view>
+      <view class="phone_icon ilb" bind:tap="handlePhoneCall">
         <image src="/assets/images/tel_icon.png" mode="widthFix" />
       </view>
     </view>
-    <view class="distance">距离: 270米</view>
-    <view class="address">地址: 东莞市长安镇S358省道宵边路段齐庆大夏首层89号</view>
+    <view wx:if="{{shop.distance}}" class="distance">距离: 270米</view>
+    <view class="address">地址: {{shop.address}}</view>
   </view>
 
 
-<!-- 案例展示 -->
-<view class="showCase">
-  <view class="showCase_title">案例展示:</view>
-  <view class="showCase_box">
-    <view wx:for="{{5}}" wx:key="*this" class="showCase_item">
-      <view class="showCase_img" style="background-image: url('/assets/images/swiper/89.png');background-repeat:no-repeat; background-size:100% 100%;-moz-background-size:100% 100%;"></view>
-      <view class="showCase_name">LANNIA蓝鸟中控台</view>
+  <!-- 案例展示 -->
+  <view class="showCase">
+    <view class="showCase_title">案例展示:</view>
+    <view class="showCase_box">
+      <view wx:for="{{shop.caseList}}" wx:key="*this" class="showCase_item">
+        <view bindtap="handleCasePreviewImg" data-img="{{item.caseImg}}" class="showCase_img"
+          style="background-image: url('{{item.caseImg}}');background-repeat:no-repeat; background-size:100% 100%;-moz-background-size:100% 100%;">
+        </view>
+        <view class="showCase_name">{{item.caseName}}</view>
+      </view>
     </view>
+    <view wx:if="{{!shop.caseList.length}}" class="no_case">暂无案例展示</view>
   </view>
-</view>
 
 </view>

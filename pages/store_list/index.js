@@ -14,16 +14,17 @@ Page({
      * 页面的初始数据
      */
     data: {
-        shop_list:[],
+        shop_list: [],
         showAuthorized: false,
-        storeName: '',
+        location: '',
+        searchShopName: '',
         current: 1,
-        size: 10,
+        size: 5,
         pages: '',
         address: {
             recommend: ''
         },
-        showNoMore: false//显示没有更多
+        showNoMore: false //显示没有更多
 
     },
 
@@ -50,30 +51,25 @@ Page({
             success: res => {
                 const latitude = res.latitude
                 const longitude = res.longitude
-
-                // console.log(data)
                 wx.chooseLocation({
                     latitude,
                     longitude,
                     success: data => {
-
-                        let mapLocation = {
+                        _this.data.location = {
                             lat: data.latitude,
                             lng: data.longitude
                         }
-                        console.log(mapLocation)
+
                         _this.setData({
                             'address.recommend': data.name
                         })
-
-
-                        // _this.handleGetStore(mapLocation)
+                        _this.handleClearData();
 
                     }
                 })
             },
             fail: err => {
-                this.setData({
+                _this.setData({
                     showAuthorized: true
                 });
 
@@ -87,7 +83,6 @@ Page({
         wx.getLocation({
             type: 'wgs84',
             success: res => {
-                // console.log(res);
                 var latitude = res.latitude;
                 var longitude = res.longitude;
                 location = {
@@ -98,15 +93,17 @@ Page({
                     lat: latitude,
                     lng: longitude
                 }
+                this.data.location = parm
                 wx.setStorageSync('location', parm)
                 this.getQQmapsdk(location)
-                this.handleGetStore(parm)
+                this.handleClearData();
             },
             fail: err => {
                 console.log(err)
                 this.setData({
                     showAuthorized: true
                 });
+                this.handleClearData();
             }
         })
 
@@ -129,24 +126,60 @@ Page({
             },
         })
     },
-    //传入经纬度向后台请求店铺数据
-    handleGetStore(parm) {
+    //向后台请求店铺列表数据
+    handleGetStore() {
         let data = {
-            ...parm,
+            storeName: this.data.searchShopName,
+            ...this.data.location,
             current: this.data.current,
             size: this.data.size
         }
-        console.log(data)
+        // console.log(data)
         shopList(data).then(res => {
+            wx.hideNavigationBarLoading() //完成停止加载
+            wx.stopPullDownRefresh() //停止下拉刷新
+            let shop_list = this.data.shop_list;
+            if (res.data.records.length > 0) {
+                res.data.records.forEach(i => {
+                    shop_list.push(i)
+                })
+            }
+
             this.setData({
                 pages: res.data.pages,
-                shop_list: res.data.records
+                shop_list
             })
 
         })
     },
-
-
+    //搜索店铺
+    handleSearchShop(event) {
+        if (!event.detail) return
+        this.data.searchShopName = event.detail;
+        this.handleClearData();
+    },
+    //监听搜索框输入
+  handleSearchInput(e) {
+    this.setData({
+        searchShopName: e.detail
+    })
+  },
+  //监听搜索框失去焦点事件
+  handleSearchBlur(){
+    if(this.data.searchShopName) return
+    this.handleClearData()
+  },
+    //清除搜索框内容
+    handleClearSearch() {
+        this.data.searchShopName = ''
+        this.handleClearData()
+    },
+    //清空数据重新向后台获取数据
+    handleClearData() {
+        this.data.current = 1;
+        this.data.shop_list = [];
+        this.handleGetStore()
+    },
     /**
      * 生命周期函数--监听页面加载
      */
@@ -187,22 +220,27 @@ Page({
      * 页面相关事件处理函数--监听用户下拉动作
      */
     onPullDownRefresh: function () {
-
+        wx.showNavigationBarLoading() //在标题栏中显示加载
+        this.setData({
+            showNoMore: false,
+        })
+        this.data.current = 1;
+        this.data.shop_list = [];
+        this.handleGetStore()
     },
 
     /**
      * 页面上拉触底事件的处理函数
      */
     onReachBottom: function () {
-        console.log('33')
         if (this.data.current < this.data.pages) {
+            this.setData({
+                showNoMore: false
+            })
             this.data.current += 1
-            let location = wx.getStorageSync('location')
-            this.handleGetOrderList(location)
+            this.handleGetStore()
         } else {
-            
-            // if(this.data.showNoMore) return
-            console.log('33')
+            if (this.data.showNoMore) return
             this.setData({
                 showNoMore: true
             })

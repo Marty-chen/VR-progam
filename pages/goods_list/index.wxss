@@ -1,10 +1,20 @@
 /* pages/category/index.wxss */
 .wraper {
-  display: flex;
-  /* justify-content: space-evenly; */
-  flex-wrap: wrap;
-  padding: 60rpx 0 60rpx 30rpx;
+  
+  padding-bottom: 100rpx;
+}
+.search_box {
   border-top: 1rpx solid #e5e5e5;
+  padding: 15rpx 32rpx;
+  background-color: #fff;
+  width: 100%;
+  position: fixed;
+  top: 0;
+}
+.goods_box {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 140rpx 0 30rpx 30rpx;
 }
 .goods_item {
   width: 44%;
@@ -35,6 +45,15 @@
   font-weight: bold;
   font-size: 32rpx;
 }
-
-
+.no_goods {
+  font-size: 24rpx;
+  color: #999;
+  text-align: center;
+  padding-top: 200rpx;
+}
+.no_more {
+  font-size: 24rpx;
+  color: #999;
+  text-align: center;
+}
 

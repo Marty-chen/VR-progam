@@ -17,7 +17,15 @@
         <text class="address" style="color:#ff7c2d;font-size:30rpx">手动定位</text>
       </view>
     </view>
-    <van-search value="{{ storeName }}" placeholder="请输入门店名称" shape="round" />
+    <!-- 搜索 -->
+    <van-search 
+    bind:search="handleSearchShop" 
+    bind:clear="handleClearSearch"
+    value="{{ searchShopName }}" 
+    placeholder="请输入门店名称" 
+    bind:change="handleSearchInput"
+    bind:blur="handleSearchBlur"
+    shape="round" />
   </view>
 
   <view class="stores">
@@ -38,6 +46,7 @@
         </navigator>
       </view>
     </view>
+    <view wx:if="{{!shop_list.length}}" class="no_shop">暂无店铺</view>
     <view wx:if="{{showNoMore}}" class="no_more">
       没有更多数据了哦！
     </view>
@@ -51,7 +60,7 @@
 
   <van-popup round show="{{ showAuthorized }}" bind:close="closeAuthorized">
     <view class="popup">
-      获取定位失败，请打开系统定位，并在设置页面允许本小程序使用位置信息。
+      获取定位信息失败，请打开系统定位，并在设置页面允许本小程序使用位置信息,以便为你提供距离你最近的店铺。
     </view>
 
     <view class="popBtn">

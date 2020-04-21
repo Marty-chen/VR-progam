@@ -83,14 +83,14 @@
 					"id": 3,
 					"name": "商品列表",
 					"pathName": "pages/goods_list/index",
-					"query": "name=头枕",
+					"query": "",
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 4,
 					"name": "商品详情",
 					"pathName": "pages/goods_details/index",
-					"query": "name=头枕",
+					"query": "gdsId=1",
 					"scene": null
 				},
 				{
@@ -188,6 +188,7 @@
 					"id": -1,
 					"name": "资讯详情",
 					"pathName": "pages/news/news_details/index",
+					"query": "",
 					"scene": null
 				}
 			]

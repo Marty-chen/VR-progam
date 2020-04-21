@@ -3,6 +3,7 @@ swiper {
   width: 100%;
   height: calc(100vw*360/750);
 }
+
 .store_info {
   font-size: 24rpx;
   padding: 60rpx 32rpx;
@@ -47,4 +48,12 @@ swiper {
 }
 .showCase_name {
   text-align: center;
+}
+
+
+.no_case {
+  text-align: center;
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 100rpx;
 }

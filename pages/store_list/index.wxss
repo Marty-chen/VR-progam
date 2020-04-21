@@ -7,7 +7,7 @@
   width: 100%;
   top: 0;
   background-color: #fff;
-  z-index: 999;
+  z-index: 99;
 }
 .location {
   background-color: #fff;
@@ -108,17 +108,12 @@
   color: #999;
 }
 
-
-
-
-
-
-
-
-
-
-
-
+.no_shop {
+  margin-top: 130rpx;
+  text-align: center;
+  color: #999;
+  font-size: 24rpx;
+}
 
 
 

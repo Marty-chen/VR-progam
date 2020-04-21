@@ -1,12 +1,29 @@
 <!--pages/category/index.wxml-->
 <view class="wraper">
-  <view wx:for="{{5}}" wx:key="*this" class="goods_item">
-    <navigator url="/pages/goods_details/index" hover-class="navigator-hover" open-type="navigate">
-      <view class="goods_img"
-        style="background-image: url('/assets/images/swiper/55.png');background-repeat:no-repeat; background-size:100% 100%;-moz-background-size:100% 100%;">
-      </view>
-      <view class="goods_name">汽车颈椎枕头护颈枕腰dfgsdfgsdfgsdfg</view>
-      <view class="goods_price">￥<text>128.00</text></view>
-    </navigator>
+  <view class="search_box">
+    <!-- 搜索 -->
+    <van-search 
+    bind:search="handleSearchShop" 
+    bind:clear="handleClearSearch" 
+    value="{{ parm.seo }}"
+    placeholder="请输入商品名称" 
+    bind:change="handleSearchInput"
+    bind:blur="handleSearchBlur"
+    shape="round" />
   </view>
+
+  <view class="goods_box">
+    <view wx:for="{{goodsList}}" wx:key="index" class="goods_item">
+      <navigator url="/pages/goods_details/index?gdsId={{item.gdsId}}" hover-class="navigator-hover"
+        open-type="navigate">
+        <view class="goods_img"
+          style="background-image: url('{{item.url}}');background-repeat:no-repeat; background-size:100% 100%;-moz-background-size:100% 100%;">
+        </view>
+        <view class="goods_name">{{item.title}}</view>
+        <view class="goods_price">￥<text>{{item.price}}</text></view>
+      </navigator>
+    </view>
+  </view>
+  <view wx:if="{{!goodsList.length}}" class="no_goods">暂无数据</view>
+  <view wx:if="{{showNoMore}}" class="no_more">没有更多了哦</view>
 </view>

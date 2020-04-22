@@ -1,13 +1,19 @@
 <!--pages/me/index.wxml-->
 <view class="wraper">
   <view
-    style="background-image: url('/assets/images/head_portrait_bg.png');background-repeat:no-repeat; background-size:100% 100%;-moz-background-size:100% 100%;"
-    class="top_banner">
+    style="background-image: url('/assets/images/head_portrait_bg.png');"
+    class="top_banner bgimg">
     <view class="userInfo ilb">
-      <view class="user_img"
-        style="background-image: url('/assets/images/business_img1.png');background-repeat:no-repeat; background-size:100% 100%;-moz-background-size:100% 100%;">
+      <view wx:if="{{userInfo.avatarUrl}}" class="user_img bgimg"
+        style="background-image: url('{{userInfo.avatarUrl}}');">
       </view>
-      <view class="user_name">小了白了白</view>
+      <view 
+      bindtap="handleToLogin"
+      wx:else 
+      class="user_img bgimg"
+        style="background-image: url('/assets/images/my_top_img_02.png');">
+      </view>
+      <view class="user_name">{{userInfo.nickName?userInfo.nickName:'未登录'}}</view>
     </view>
   </view>
 
@@ -46,5 +52,8 @@
       <text>关于我们</text>
     </navigator>
   </view>
+  <view bind:tap="exitLogin" wx:if="{{userInfo}}" class="exitLogin">
+    退出登录
+</view>
 
 </view>

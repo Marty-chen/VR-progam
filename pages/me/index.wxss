@@ -33,3 +33,10 @@
 .bdb {
   border-bottom: 16rpx solid #f7f7f7;
 }
+.exitLogin {
+  background-color: #fff;
+  text-align: center;
+  padding: 28rpx 0;
+  font-size: 28rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+}

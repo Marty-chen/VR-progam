@@ -119,3 +119,15 @@
   text-align: center;
   color: #fff;
 }
+
+.van_tag {
+  margin-right: 20rpx;
+}
+
+.no_more {
+  padding-bottom: 16rpx;
+  font-size: 24rpx;
+  color: #999;
+  background-color: #f7f7f7;
+  text-align: center;
+}

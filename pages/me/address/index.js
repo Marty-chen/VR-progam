@@ -19,7 +19,7 @@ Page({
     wx.showModal({
       title: '提示',
       content: '您确定要把此地址设为默认地址？',
-      success:(res)=> {
+      success: (res) => {
         if (res.confirm) {
           let parm = {
             addressId: this.data.addrList[index].addressId,
@@ -27,13 +27,13 @@ Page({
           }
           addressUpdate(parm).then(res => {
             wx.showToast({
-                  title: '设置成功',
-                  icon: 'success',
-                  duration: 2000
-                })
-                setTimeout(()=>{
-                  this.getAddressList()
-                },2000)
+              title: '设置成功',
+              icon: 'success',
+              duration: 2000
+            })
+            setTimeout(() => {
+              this.getAddressList()
+            }, 2000)
           })
         } else if (res.cancel) {
           console.log('用户点击取消')
@@ -41,7 +41,7 @@ Page({
       }
     })
 
-   
+
   },
   //编辑地址
   handleEditAddr(e) {
@@ -51,9 +51,13 @@ Page({
     }
     wx.navigateTo({
       url: '/pages/me/address/new_address/index',
-      success: function(res) {
+      success: function (res) {
         // 通过eventChannel向被打开页面传送数据
-        res.eventChannel.emit('acceptDataFromOpenerPage', { data: {parm} })
+        res.eventChannel.emit('acceptDataFromOpenerPage', {
+          data: {
+            parm
+          }
+        })
       }
     })
   },
@@ -65,7 +69,7 @@ Page({
     wx.showModal({
       title: '删除地址',
       content: '您确定要删除该地址？',
-      success:(res)=> {
+      success: (res) => {
         if (res.confirm) {
           deleteAdd(parm).then(() => {
             wx.showToast({
@@ -73,9 +77,9 @@ Page({
               icon: 'success',
               duration: 2000
             })
-            setTimeout(()=>{
+            setTimeout(() => {
               this.getAddressList()
-            },2000)
+            }, 2000)
           })
         } else if (res.cancel) {
           console.log('用户点击取消')
@@ -90,13 +94,26 @@ Page({
     })
   },
   //选择地址
-  handleChooseAddr() {
+  handleChooseAddr(e) {
+    let addr = e.currentTarget.dataset.addr;
+    console.log(addr)
     let router = getCurrentPages()
-    console.log(router)
-    //判断是否在购物车跳转过来的
-    // if(router[1].route == "pages/cart/confirm_order/index") {
 
-    // }
+    //判断是否在购物车跳转过来的
+    if (router[1].route == "pages/cart/confirm_order/index") {
+      console.log(router[1].route)
+      // 将参数传回上一页
+      // const pages = getCurrentPages()
+      const prevPage = router[router.length - 2] // 上一页
+      // 调用上一个页面的setData 方法，将数据存储
+      prevPage.setData({
+        addr
+      })
+      // 返回上一页
+      wx.navigateBack({
+        delta: 1
+      })
+    }
   },
 
   //网络请求地址列表

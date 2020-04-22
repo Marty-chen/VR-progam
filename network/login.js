@@ -11,7 +11,7 @@ export function userLogin(opts) {
 //退出登陆
 export function logout(opts) {
     return request({
-        url: '/api/login/logout',
+        url: '/api/logout',
         data: opts,
         method: 'post'
     })

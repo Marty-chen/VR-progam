@@ -1,42 +1,38 @@
 <!--pages/me/VIP/index.wxml-->
 <view class="wraper">
-  <view class="user_status bgimg" style="background-image: url('/assets/images/vip_top_bg_02.png');">
+  <view class="user_status bgimg" style="background-image: url('/assets/images/vip_top_bg_0{{vipList.vipStatus==0? 2: 1}}.png');">
     <view class="content_box">
-      <view class="user_img bgimg ilb" style="background-image: url('/assets/images/business_img1.png');">
+      <view class="user_img bgimg ilb" style="background-image: url('{{vipList.avatar}}');">
       </view>
       <view class="user_detail ilb">
-        <view class="user_name">小了白了白</view>
+        <view class="user_name">{{vipList.nickName}}</view>
         <view class="vip_status">
-          <text>您当前未开通VIP</text>
-          <!-- <text>VIP有效日期：2020-06-30</text>
-          <text>您的会员已过期</text> -->
+          <text wx:if="{{vipList.vipStatus==1}}">VIP有效日期：{{vipList.vipExpiryDate}}</text>
+          <text wx:elif="{{vipList.vipStatus==2}}">您的会员已过期</text>
+          <text wx:else>您当前未开通VIP</text>
         </view>
       </view>
     </view>
   </view>
 
-  <view bindtap="handleClickA" class="set_meal bgimg {{currentIndex==0?'active':''}}"
-    style="background-image: url('/assets/images/vip_price_box_click.png');">
-    <view class="content_vip">
-      <view class="set_meal_left">
-        <view class="set_meal_title">季度VIP</view>
-        <view class="set_meal_words">3个月无限次数阅览内饰换新的VR效果</view>
-      </view>
-      <view class="set_meal_price">￥<text>249</text></view>
-    </view>
-  </view>
+  
 
-  <view bindtap="handleClickB" class="set_meal bgimg {{currentIndex==1?'active':''}}"
+  <view 
+  wx:for="{{vipList.vipGradeVOS}}"
+  wx:key="index"
+  bindtap="handleChooseVip"
+  data-index="{{index}}"
+   class="set_meal bgimg {{currentIndex==index?'active':''}}"
     style="background-image: url('/assets/images/vip_price_box_click.png');">
     <view class="content_vip">
       <view class="set_meal_left">
-        <view class="set_meal_title">年度VIP</view>
-        <view class="set_meal_words">12个月无限次数阅览内饰换新的VR效果</view>
+        <view class="set_meal_title">{{item.name}}</view>
+        <view class="set_meal_words">{{item.introduce}}</view>
       </view>
-      <view class="set_meal_price">￥<text>499</text></view>
+      <view class="set_meal_price">￥<text>{{item.price}}</text></view>
     </view>
-    <view class="discount bgimg" style="background-image: url('/assets/images/vip_label_one.png');">
-      年度VIP享受5折</view>
+    <view wx:if="{{item.activityTitle}}" class="discount bgimg" style="background-image: url('/assets/images/vip_label_one.png');">
+      {{item.activityTitle}}</view>
   </view>
 
   <view class="clause">
@@ -46,7 +42,7 @@
         <image wx:else src="/assets/images/choose_default_icon.png" mode="widthFix" />
       </view>
       <view class="check_words ilb">
-        <text>我已同意愿遇APP的</text>
+        <text>我已同意汇改车的</text>
         <navigator class="ilb" url="" hover-class="navigator-hover" open-type="navigate">
           <text class="clause_red">《会员服务条款》</text>
         </navigator>
@@ -54,6 +50,6 @@
     </view>
   </view>
   <view class="pay_btn">
-    <button class="cfbtn">确认支付</button>
+    <button bindtap="handlePayVip" class="cfbtn">确认支付</button>
   </view>
 </view>

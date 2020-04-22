@@ -95,7 +95,6 @@ Page({
           duration: 2000
         })
       })
-
     }
     //返回上一页
     setTimeout(() => {

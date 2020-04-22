@@ -2,7 +2,7 @@
 <view class="wrapper">
   <view class="address">
     <view wx:for="{{addrList}}" wx:key="index" class="address_item bdb">
-      <view bindtap="handleChooseAddr" class="address_box">
+      <view bindtap="handleChooseAddr" data-addr="{{item}}" class="address_box">
         <view class="name_phone">
           <text>{{item.userName}}</text>
           <text>{{item.phone}}</text>

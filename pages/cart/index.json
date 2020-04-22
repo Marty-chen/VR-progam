@@ -3,5 +3,7 @@
     "van-tag": "@vant/weapp/tag/index",
     "van-stepper": "@vant/weapp/stepper/index"
   },
-  "navigationBarTitleText": "购物车"
+  "navigationBarTitleText": "购物车",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
 }

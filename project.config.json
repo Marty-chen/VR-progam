@@ -150,10 +150,10 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 13,
 					"name": "确认订单",
 					"pathName": "pages/cart/confirm_order/index",
-					"query": "",
+					"query": "cartIds=[1252136437511811074, 1252136437511811075]",
 					"scene": null
 				},
 				{

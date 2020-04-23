@@ -29,8 +29,8 @@
     <view class="showCase_title">案例展示:</view>
     <view class="showCase_box">
       <view wx:for="{{shop.caseList}}" wx:key="*this" class="showCase_item">
-        <view bindtap="handleCasePreviewImg" data-img="{{item.caseImg}}" class="showCase_img"
-          style="background-image: url('{{item.caseImg}}');background-repeat:no-repeat; background-size:100% 100%;-moz-background-size:100% 100%;">
+        <view bindtap="handleCasePreviewImg" data-img="{{item.caseImg}}" class="showCase_img bgimg"
+          style="background-image: url('{{item.caseImg}}');">
         </view>
         <view class="showCase_name">{{item.caseName}}</view>
       </view>

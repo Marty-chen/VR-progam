@@ -2,13 +2,17 @@
 import {
   logout
 } from "../../network/login"
+import {
+  baseImg
+} from "../../network/config.js"
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    userInfo: ''
+    userInfo: '',
+    baseImg: baseImg
   },
   //打电话
   handleCall(e) {
@@ -66,7 +70,7 @@ Page({
    */
   onLoad: function (options) {
 
-
+    
   },
 
   /**

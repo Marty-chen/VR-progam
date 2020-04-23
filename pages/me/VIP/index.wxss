@@ -73,9 +73,10 @@
   font-weight: bold;
 }
 .discount {
-  width: 168rpx;
-  height: 40rpx;
+  min-width: 170rpx;
+  min-height: 40rpx;
   line-height: 40rpx;
+  padding: 0 20rpx;
   font-size: 20rpx;
   color: #fff;
   position: absolute;

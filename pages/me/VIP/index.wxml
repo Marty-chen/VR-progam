@@ -1,6 +1,6 @@
 <!--pages/me/VIP/index.wxml-->
 <view class="wraper">
-  <view class="user_status bgimg" style="background-image: url('/assets/images/vip_top_bg_0{{vipList.vipStatus==0? 2: 1}}.png');">
+  <view class="user_status bgimg" style="background-image: url('{{baseImg}}vip_top_bg_0{{vipList.vipStatus==0? 2: 1}}.png');">
     <view class="content_box">
       <view class="user_img bgimg ilb" style="background-image: url('{{vipList.avatar}}');">
       </view>
@@ -23,7 +23,7 @@
   bindtap="handleChooseVip"
   data-index="{{index}}"
    class="set_meal bgimg {{currentIndex==index?'active':''}}"
-    style="background-image: url('/assets/images/vip_price_box_click.png');">
+    style="background-image: url('{{baseImg}}vip_price_box_click.png');">
     <view class="content_vip">
       <view class="set_meal_left">
         <view class="set_meal_title">{{item.name}}</view>
@@ -31,18 +31,18 @@
       </view>
       <view class="set_meal_price">￥<text>{{item.price}}</text></view>
     </view>
-    <view wx:if="{{item.activityTitle}}" class="discount bgimg" style="background-image: url('/assets/images/vip_label_one.png');">
+    <view wx:if="{{item.activityTitle}}" class="discount bgimg" style="background-image: url('{{baseImg}}vip_label_one.png');">
       {{item.activityTitle}}</view>
   </view>
 
   <view class="clause">
-    <view class="check" bind:tap="check">
-      <view class="check_icon ilb">
+    <view class="check">
+      <view bind:tap="check" class="check_icon ilb">
         <image wx:if="{{isCheck}}" src="/assets/images/choose_click_icon_02.png" mode="widthFix" />
         <image wx:else src="/assets/images/choose_default_icon.png" mode="widthFix" />
       </view>
       <view class="check_words ilb">
-        <text>我已同意汇改车的</text>
+        <text bind:tap="check">我已同意汇改车的</text>
         <navigator class="ilb" url="" hover-class="navigator-hover" open-type="navigate">
           <text class="clause_red">《会员服务条款》</text>
         </navigator>

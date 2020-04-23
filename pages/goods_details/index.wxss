@@ -97,7 +97,7 @@ swiper {
 }
 
 .popup_box {
-  padding: 60rpx 30rpx;
+  padding: 60rpx 30rpx 120rpx 30rpx;
 }
 .produ_info {
   white-space: nowrap;
@@ -117,31 +117,33 @@ swiper {
 .pro_name {
   overflow: hidden;
   text-overflow: ellipsis;
+  margin-bottom: 50rpx;
 }
 .inventory {
   font-size: 24rpx;
   color: #999;
-  margin-top: 40rpx;
+  /* margin-top: 40rpx; */
 }
 .size {
   padding: 50rpx 0;
 }
 .size_name {
+  font-size: 28rpx;
   font-weight: bold;
-  margin-bottom: 30rpx;
+  margin-bottom: 20rpx;
 }
 .size_box {
   display: flex;
   flex-wrap: wrap;
 }
 .size_item {
-  padding: 12rpx 15rpx;
+  padding: 10rpx;
   background-color: #f2f2f2;
   color: #999;
-  margin-right: 40rpx;
-  border-radius: 4rpx;
-  font-size: 28rpx;
-  margin-bottom: 40rpx;
+  margin-right: 20rpx;
+  border-radius: 6rpx;
+  font-size: 24rpx;
+  margin-bottom: 20rpx;
 }
 .active {
   background-color: var(--themeColor);

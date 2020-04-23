@@ -31,7 +31,7 @@ Page({
       })
       this.setData({
         orderInfo,
-        // addr: orderInfo.address
+        addr: orderInfo.address
       })
     })
   },

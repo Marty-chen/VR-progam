@@ -18,17 +18,18 @@ Page({
     goodsRecommend: [],
     goodsSku: [],
     gdsId: '',
-    isShowPopup: false,
+    isShowPopup: true,
     currentIndex: 0,
-    isAddCart: true
+    isAddCart: true,
+    
   },
   //加入购物车或者立即购买
   handleSaveGoods() {
-    if(this.data.isAddCart) {
+    if (this.data.isAddCart) {
       //加入购物车接口
 
 
-    }else {
+    } else {
       //立即购买接口和相应逻辑
 
     }
@@ -41,8 +42,8 @@ Page({
       isAddCart: false
     })
   },
-   //加入购物车
-   handleAddCart() {
+  //加入购物车
+  handleAddCart() {
     if (!this.isLogin()) return
     this.setData({
       isShowPopup: true,
@@ -137,9 +138,19 @@ Page({
   //请求商品sku
   getGoodsSku() {
     goods_sku(this.data.gdsId).then(res => {
+      let goodsSku = res.data;
       this.setData({
-        goodsSku: res.data
+        goodsSku
       })
+      // console.log(JSON.stringify(res.data))
+      goodsSku.forEach((item1,index1)=>{
+        item1.valList.forEach((item2,index2)=>{
+          // this.data.sizes[index2] = 
+        })
+        
+      })
+
+
     })
   },
 

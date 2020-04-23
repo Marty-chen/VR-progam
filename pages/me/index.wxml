@@ -1,7 +1,7 @@
 <!--pages/me/index.wxml-->
 <view class="wraper">
   <view
-    style="background-image: url('/assets/images/head_portrait_bg.png');"
+    style="background-image: url('{{baseImg}}head_portrait_bg.png');"
     class="top_banner bgimg">
     <view class="userInfo ilb">
       <view wx:if="{{userInfo.avatarUrl}}" class="user_img bgimg"
@@ -11,7 +11,7 @@
       bindtap="handleToLogin"
       wx:else 
       class="user_img bgimg"
-        style="background-image: url('/assets/images/my_top_img_02.png');">
+        style="background-image: url('{{baseImg}}my_top_img_02.png');">
       </view>
       <view class="user_name">{{userInfo.nickName?userInfo.nickName:'未登录'}}</view>
     </view>

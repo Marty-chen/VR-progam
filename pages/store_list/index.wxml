@@ -30,8 +30,8 @@
 
   <view class="stores">
     <view wx:for="{{shop_list}}" wx:key="index" class="store_item bdb">
-      <view class="store_logo ilb"
-        style="background-image: url('{{item.logo}}');background-repeat:no-repeat; background-size:100% 100%;-moz-background-size:100% 100%;">
+      <view class="store_logo bgimg ilb"
+        style="background-image: url('{{item.logo}}');">
       </view>
       <view class="store_info ilb">
         <view class="store_name">{{item.storeName}}</view>

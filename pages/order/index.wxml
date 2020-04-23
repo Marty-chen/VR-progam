@@ -15,8 +15,8 @@
       <navigator url="/pages/order/order_details/index" hover-class="none" open-type="navigate">
         <view class="produ">
           <view class="pro_left">
-            <view class="produ_img ilb"
-              style="background-image: url('/assets/images/swiper/55.png');background-repeat:no-repeat; background-size:100% 100%;-moz-background-size:100% 100%;">
+            <view class="produ_img bgimg ilb"
+              style="background-image: url('/assets/images/swiper/55.png');">
             </view>
             <view class="produ_info ilb">
               <view class="name">汽车头枕靠枕车用车载颈椎枕头护颈枕腰</view>

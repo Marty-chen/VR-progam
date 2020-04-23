@@ -56,8 +56,8 @@
         <block wx:for="{{5}}" wx:key="*this">
           <navigator class="ilb" url="/pages/store_details/index" hover-class="none" open-type="navigate">
             <view class="scroll-view-item">
-              <view class="shop_logo"
-                style="background-image: url('/assets/images/business_img1.png');background-repeat:no-repeat; background-size:100% 100%;-moz-background-size:100% 100%;">
+              <view class="shop_logo bgimg"
+                style="background-image: url('/assets/images/business_img1.png');">
               </view>
               <view class="shop_info">
                 <view class="shop_name">Quickest快点漆修汽车行</view>

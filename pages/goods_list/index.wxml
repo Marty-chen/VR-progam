@@ -16,8 +16,8 @@
     <view wx:for="{{goodsList}}" wx:key="index" class="goods_item">
       <navigator url="/pages/goods_details/index?gdsId={{item.gdsId}}" hover-class="navigator-hover"
         open-type="navigate">
-        <view class="goods_img"
-          style="background-image: url('{{item.url}}');background-repeat:no-repeat; background-size:100% 100%;-moz-background-size:100% 100%;">
+        <view class="goods_img bgimg"
+          style="background-image: url('{{item.url}}');">
         </view>
         <view class="goods_name">{{item.title}}</view>
         <view class="goods_price">￥<text>{{item.price}}</text></view>

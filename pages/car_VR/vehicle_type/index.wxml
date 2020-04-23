@@ -10,7 +10,7 @@
   <view class="content">
     <view wx:for="{{8}}" wx:key="*this" class="items">
       <navigator url="/pages/car_VR/choose_style/index" hover-class="navigator-hover" open-type="navigate">
-        <view class="carLogo ilb" style="background-image: url('/assets/images/swiper/89.png');background-repeat:no-repeat; background-size:100% 100%;-moz-background-size:100% 100%;"></view>
+        <view class="carLogo bgimg ilb" style="background-image: url('/assets/images/swiper/89.png');"></view>
         <view class="brank_name ilb">奥迪Q5-焕新</view>
       </navigator>
     </view>

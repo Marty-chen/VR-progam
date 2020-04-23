@@ -3,13 +3,16 @@ import {
   vip_list,
   createOrder
 } from "../../../network/vip"
-
+import {
+  baseImg
+} from "../../../network/config.js"
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    baseImg,
     vipList: '',
     currentIndex: 0,
     isCheck: false

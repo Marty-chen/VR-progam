@@ -11,6 +11,7 @@
     "pages/refund/refund_details/index",
     "pages/goods_list/index",
     "pages/goods_details/index",
+    "pages/goods_details/confirm_order/index",
     "pages/store_list/index",
     "pages/store_details/index",
     "pages/car_VR/index",

@@ -119,6 +119,9 @@ Page({
         i.check = false
         cartList.push(i)
       })
+      cartList.forEach(item=>{
+        item.price = item.price.toFixed(2)
+      })
       this.setData({
         cartList,
         pages: res.data.pages
@@ -129,7 +132,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getCartList()
+    
   },
 
   /**
@@ -143,7 +146,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getCartList()
   },
 
   /**

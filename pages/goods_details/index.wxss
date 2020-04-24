@@ -170,3 +170,7 @@ swiper {
 van-goods-action-icon {
   margin-right: 35rpx !important;
 }
+.van-button__text {
+  font-size: 26rpx !important;
+  white-space: nowrap;
+}

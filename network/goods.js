@@ -51,3 +51,30 @@ export function goods_sku(opts) {
         method: 'post'
     })
 }
+
+//立即购买
+export function goods_payNow(opts) {
+    return request({
+        url: '/api/odr/confirmOrder',
+        data: opts,
+        method: 'post'
+    })
+}
+
+//加入购物车
+export function goods_addCart(opts) {
+    return request({
+        url: '/api/ship/cart/save',
+        data: opts,
+        method: 'post'
+    })
+}
+
+//提交订单
+export function goods_createOrder(opts) {
+    return request({
+        url: '/api/odr/createOrder',
+        data: opts,
+        method: 'post'
+    })
+}

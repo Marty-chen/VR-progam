@@ -22,7 +22,9 @@
     "pages/me/address/index",
     "pages/me/address/new_address/index",
     "pages/me/about/index",
-    "pages/login/login"
+    "pages/login/login",
+    "pages/notice_pages/deal_done/index",
+    "pages/notice_pages/payment_success/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

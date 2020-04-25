@@ -66,8 +66,8 @@
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "订单",
+					"id": 1,
+					"name": "订单列表",
 					"pathName": "pages/order/index",
 					"query": "",
 					"scene": null
@@ -157,10 +157,10 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 14,
 					"name": "订单详情",
 					"pathName": "pages/order/order_details/index",
-					"query": "",
+					"query": "orderId= 1253626149304930306",
 					"scene": null
 				},
 				{
@@ -189,6 +189,20 @@
 					"name": "资讯详情",
 					"pathName": "pages/news/news_details/index",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": 19,
+					"name": "付款成功",
+					"pathName": "pages/notice_pages/payment_success/index",
+					"query": "orderId=2",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "交易成功",
+					"pathName": "pages/notice_pages/deal_done/index",
+					"query": "orderId=2",
 					"scene": null
 				}
 			]

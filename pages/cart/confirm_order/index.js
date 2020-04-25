@@ -31,7 +31,7 @@ Page({
   //提交订单
   handleToConfirmOrder() {
     let skus = []
-    this.data.orderInfo.goodsList.forEach(item=>{
+    this.data.orderInfo.goodsList.forEach(item => {
       skus.push({
         gdsSkuId: item.gdsSkuId,
         qty: item.qty
@@ -44,36 +44,39 @@ Page({
       skus
     }
     console.log(parm)
-    goods_createOrder(parm).then(res=>{
+    goods_createOrder(parm).then(res => {
       let order = res.data;
-        wx.requestPayment({
-          timeStamp: order.timeStamp,
-          nonceStr: order.nonceStr,
-          package: order.package,
-          signType: order.signType,
-          paySign: order.paySign,
-          success:data => {
-            wx.showToast({
-              title: "支付成功",
-              icon: "success",
-              duration: 2000
+      console.log(order)
+      wx.requestPayment({
+        timeStamp: order.timeStamp,
+        nonceStr: order.nonceStr,
+        package: order.package,
+        signType: order.signType,
+        paySign: order.paySign,
+        success: data => {
+          wx.showToast({
+            title: "支付成功",
+            icon: "success",
+            duration: 2000
+          })
+          setTimeout(() => {
+            //跳转到支付成功页面
+            wx.reLaunch({
+              url: '/pages/notice_pages/payment_success/index?orderId=' + order.orderId
             })
-            setTimeout(() => {
-              //跳转到支付成功页面
-              
-            }, 1000)
 
-          },
-          fail:err=> {
-            // cancelOrder(order.code)
-            console.log(err)
-            wx.showToast({
-              title: "支付失败,请重新支付",
-              icon: "none",
-              duration: 2000
-            })
-          }
-        })
+          }, 1000)
+
+        },
+        fail: err => {
+          console.log(err)
+          wx.showToast({
+            title: "支付失败,请重新支付",
+            icon: "none",
+            duration: 2000
+          })
+        }
+      })
     })
 
   },
@@ -119,7 +122,7 @@ Page({
     const pages = getCurrentPages()
     const currPage = pages[pages.length - 1] // 当前页
     console.log(currPage.data) // data中会含有testdata
-    console.log(this.data.addr) 
+    console.log(this.data.addr)
     // this.setData({
     //   addr: currPage.data.addr
     // })

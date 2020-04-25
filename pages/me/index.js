@@ -15,11 +15,11 @@ Page({
     baseImg: baseImg
   },
   //打电话
-  handleCall(e) {
-    // let num = e.currentTarget.dataset.phone
-    // wx.makePhoneCall({
-    //   phoneNumber: num
-    // })
+  handleCall() {
+    
+    wx.makePhoneCall({
+      phoneNumber: '13555555555'
+    })
   },
   //去登录
   handleToLogin() {

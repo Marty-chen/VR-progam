@@ -1,4 +1,8 @@
 {
-  "usingComponents": {},
-  "navigationBarTitleText": "订单列表"
+  "usingComponents": {
+    "van-tag": "@vant/weapp/tag/index"
+  },
+  "navigationBarTitleText": "订单列表",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
 }

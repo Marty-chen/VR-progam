@@ -1,44 +1,57 @@
 <!--pages/order/index.wxml-->
 <view class="wraper">
   <view class="tabs">
-    <view wx:for="{{tabs}}" wx:key="*this" bind:tap="tabClick" data-index="{{index}}"
+    <view wx:for="{{tabs}}" wx:key="index" bind:tap="tabClick" data-index="{{index}}"
       class="tab_item {{currentIndex == index? 'active' : ''}}">{{item.title}}</view>
   </view>
 
   <view class="orders">
     <view class="bdb"></view>
-    <view wx:for="{{5}}" wx:key="*this" class="order_item">
+    <view wx:for="{{orderList}}" wx:key="index" class="order_item">
       <view class="order_num">
-        <view>订单编号:1215485712488900</view>
-        <view class="order_status">待付款</view>
+        <view>订单编号:{{item.code}}</view>
+        <view class="order_status">
+          <text wx:if="{{item.status==0}}">待付款</text>
+          <text wx:if="{{item.status==1}}">待发货</text>
+          <text wx:if="{{item.status==2}}">已发货</text>
+          <text wx:if="{{item.status==3}}">已收货</text>
+          <text wx:if="{{item.status==4}}">已完成</text>
+          <text wx:if="{{item.status==5}}">已关闭</text>
+        </view>
       </view>
-      <navigator url="/pages/order/order_details/index" hover-class="none" open-type="navigate">
-        <view class="produ">
+      <view>
+        <view wx:for="{{item.items}}" wx:for-item="list" wx:for-index="i" wx:key="i" bindtap="handleTogoodsDetail"
+          data-gdsid="{{list.gdsId}}" class="produ">
           <view class="pro_left">
-            <view class="produ_img bgimg ilb"
-              style="background-image: url('/assets/images/swiper/55.png');">
+            <view class="produ_img bgimg ilb" style="background-image: url('{{list.gdsImg}}');">
             </view>
             <view class="produ_info ilb">
-              <view class="name">汽车头枕靠枕车用车载颈椎枕头护颈枕腰</view>
-              <view class="pro_color">颜色: 黑色</view>
+              <view class="name">{{list.gdstitle}}</view>
+              <view class="pro_color">
+                <van-tag class="van_tag" wx:for="{{list.skuValue}}" wx:key="ii" wx:for-item="l" wx:for-index="ii"
+                  color="#f2f2f2" text-color="#999">{{l.skuName}}：{{l.valueName}}</van-tag>
+              </view>
             </view>
           </view>
           <view class="pro_right">
-            <view class="pro_price">￥<text>128.00</text></view>
-            <view class="pro_num">x1</view>
+            <view class="pro_price">￥<text>{{list.price}}</text></view>
+            <view class="pro_num">x{{list.qty}}</view>
           </view>
         </view>
-      </navigator>
+      </view>
 
 
-      <view class="total_price">共１件　合计：
-        <text class="pro_price">￥<text style="font-size: 36rpx;">128.00</text></text>
+      <view class="total_price">共{{item.totalQty}}件　合计：
+        <text class="pro_price">￥<text style="font-size: 36rpx;">{{item.totalAmount}}</text></text>
       </view>
 
       <view class="btns">
-        <button>提醒发货</button>
-        <button>取消订单</button>
-        <button class="red_color">去付款</button>
+        <button bindtap="handleToOrderDetail" data-orderid="{{item.orderId}}">订单详情</button>
+        <button wx:if="{{item.status==1}}">提醒发货</button>
+        <button wx:if="{{item.status==0}}">取消订单</button>
+        <button wx:if="{{item.status==4 || item.status==5}}">删除订单</button>
+        <button wx:if="{{item.status==0}}" class="red_color">去付款</button>
+        <button wx:if="{{item.status==2}}" class="red_color">确定收货</button>
       </view>
     </view>
   </view>

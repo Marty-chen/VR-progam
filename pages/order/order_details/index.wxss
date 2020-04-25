@@ -150,9 +150,6 @@
   min-width: 150rpx;
 }
 
-.order_info {
-  /* padding-bottom: 160rpx; */
-}
 
 .cells_nobtw {
   padding: 32rpx;
@@ -229,7 +226,9 @@
   margin: 100rpx 0 60rpx 0;
 }
 
-
+.van_tag {
+  margin-right: 20rpx;
+}
 
 
 

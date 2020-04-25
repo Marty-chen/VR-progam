@@ -114,12 +114,13 @@ Page({
     cart_list(this.data.parm).then(res => {
       wx.hideNavigationBarLoading() //完成停止加载
       wx.stopPullDownRefresh() //停止下拉刷新
-      let cartList = this.data.cartList;
+      let cartList = [];
       res.data.records.forEach(i => {
         i.check = false
         cartList.push(i)
       })
-      cartList.forEach(item=>{
+      // console.log(cartList)
+      cartList.forEach((item,index)=>{
         item.price = item.price.toFixed(2)
       })
       this.setData({

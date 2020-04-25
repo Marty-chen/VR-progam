@@ -51,7 +51,7 @@
     <van-goods-action-button text="立即购买" bind:tap="payNow" />
   </van-goods-action>
 
-  <van-popup show="{{ isShowPopup }}" bind:close="closePopup" position="bottom" custom-style="max-height: 70%" round
+  <van-popup show="{{ isShowPopup }}" bind:close="closePopup" position="bottom" custom-style="max-height: 80%" round
     closeable>
     <view class="popup_box">
       <view class="produ_info">

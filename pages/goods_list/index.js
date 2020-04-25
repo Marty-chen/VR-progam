@@ -32,8 +32,8 @@ Page({
     })
   },
   //监听搜索框失去焦点事件
-  handleSearchBlur(){
-    if(this.data.parm.seo) return
+  handleSearchBlur() {
+    if (this.data.parm.seo) return
     this.handleClearData()
   },
   //清除搜索框内容
@@ -71,12 +71,12 @@ Page({
     //处理URL传过来的参数
     let name = options.name;
     let cateId = options.cateId;
-    if(name) {
+    if (name) {
       wx.setNavigationBarTitle({
         title: name
       })
     }
-    if(cateId) {
+    if (cateId) {
       this.data.parm.cateId = cateId
     }
 

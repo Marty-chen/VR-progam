@@ -35,7 +35,7 @@ Page({
     if (this.data.isAddCart) {
       //加入购物车接口
       parm.gdsId = this.data.gdsId
-      goods_addCart(parm).then(res=>{
+      goods_addCart(parm).then(res => {
         wx.showToast({
           title: "加入购物车成功"
         })
@@ -46,13 +46,15 @@ Page({
 
     } else {
       //立即购买接口和相应逻辑
-      goods_payNow(parm).then(res=>{
+      goods_payNow(parm).then(res => {
         let orderData = res.data
         wx.navigateTo({
           url: '/pages/goods_details/confirm_order/index',
-          success: function(res) {
+          success: function (res) {
             // 通过eventChannel向被打开页面传送数据
-            res.eventChannel.emit('acceptDataFromOpenerPage', { orderData })
+            res.eventChannel.emit('acceptDataFromOpenerPage', {
+              orderData
+            })
           }
         })
       })
@@ -140,18 +142,17 @@ Page({
     })
     // console.log(acts)
     //调用方法向数组原型添加对比数组是否相同方法
-    this.isArraysTheSame()
-    
-    acts.forEach((item,index)=>{
-      if(item.equals(active)) {
+    this.isArraysTheSame() //比对两个数组是否相同
+
+    acts.forEach((item, index) => {
+      if (item.equals(active)) {
         console.log(this.data.skuList[index])
         let skuChoose = this.data.skuList[index];
-        skuChoose.price = skuChoose.price.toFixed(2)
         this.setData({
           skuChoose
         })
       }
-      
+
     })
 
   },
@@ -198,7 +199,7 @@ Page({
   getGoodsRecommend() {
     goods_recommend(this.data.gdsId).then(res => {
       let goodsRecommend = res.data;
-      goodsRecommend.forEach(item=>{
+      goodsRecommend.forEach(item => {
         item.price = item.price.toFixed(2)
       })
       this.setData({
@@ -311,6 +312,7 @@ Page({
   },
   //比对两个数组是否相同
   isArraysTheSame() {
+    if (Array.prototype.equals) return
     // 将.equals方法附加到数组的原型以对任何数组调用它
     Array.prototype.equals = function (array) {
       // 如果另一个数组是假值，则返回

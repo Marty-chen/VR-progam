@@ -24,7 +24,6 @@ image {
   width: 686rpx;
   height: 78rpx;
   line-height: 78rpx;
-  /* font-size: 30rpx; */
   background-color: var(--themeColor);
   border-radius: 40rpx;
   color: #fff;

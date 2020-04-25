@@ -119,3 +119,7 @@
   color: var(--themeColor);
   border: 1rpx solid var(--themeColor);
 }
+
+.van_tag {
+  margin-right: 20rpx;
+}

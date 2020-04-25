@@ -1,0 +1,11 @@
+<!--pages/notice_pages/deal_done/index.wxml-->
+<view class="wrapper">
+  <view class="icon_img">
+    <image src="/assets/images/order_complete_img.png" mode="widthFix"/>
+  </view>
+  <view class="wordls">交易成功</view>
+  <view class="btns">
+    <button bindtap="handleToOrderDetail" class="cfbtn">查看详情</button>
+    <button bindtap="handleToHome" class="cfbtn home_btn">返回首页</button>
+  </view>
+</view>

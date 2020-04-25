@@ -60,12 +60,13 @@ Page({
             })
             setTimeout(() => {
               //跳转到支付成功页面
-              
+              wx.reLaunch({
+                url: '/pages/notice_pages/payment_success/index?orderId='+ order.orderId
+              })
             }, 1000)
 
           },
           fail:err=> {
-            // cancelOrder(order.code)
             console.log(err)
             wx.showToast({
               title: "支付失败,请重新支付",
@@ -95,9 +96,7 @@ Page({
         orderInfo,
         addr: data.orderData.address
       })
-    })
-    // console.log(this.data.orderData)
-    
+    })   
   },
 
   /**

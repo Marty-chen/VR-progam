@@ -1,71 +1,37 @@
 import request from './network.js';
 // 订单列表
-export function getOrderList(opts) {
+export function order_list(opts) {
     return request({
-        url: '/api/odr/findListByUserId',
+        url: '/api/odr/list',
         data: opts,
-        method: 'post'
+        method: 'get'
     })
 }
-//订单详情数据
-export function orderDetails(opts) {
+
+// 订单详情
+export function order_detail(opts) {
     return request({
-        url: '/api/odr/getOdrByUserId',
+        url: '/api/odr/detail',
+        data: opts,
+        method: 'get'
+    })
+}
+
+// 取消订单
+export function order_cancel(opts) {
+    return request({
+        url: '/api/odr/cancel',
         data: opts,
         method: 'post'
     })
 }
 
-//取消订单
-export function cancelOrder(opts) {
+// 删除订单
+export function order_del(opts) {
     return request({
-        url: '/api/odr/rapidCarWashRefund',
+        url: '/api/odr/del',
         data: opts,
         method: 'post'
     })
 }
 
-//评价
-export function comment(opts) {
-    return request({
-        url: '/api/odr/eva/save',
-        data: opts,
-        method: 'post'
-    })
-}
-
-//确认完成
-export function confirmOdr(opts) {
-    return request({
-        url: '/api/odr/confirmOdr',
-        data: opts,
-        method: 'post'
-    })
-}
-
-//确认预约
-export function confirmReserve(opts) {
-    return request({
-        url: '/api/odr/confirmReserve',
-        data: opts,
-        method: 'post'
-    })
-}
-
-//取消预约
-export function cancelYuyue(opts) {
-    return request({
-        url: '/api/odr/cancelReserve',
-        data: opts,
-        method: 'post'
-    })
-}
-
-//快捷洗车价格
-export function wascarprice(opts) {
-    return request({
-        url: '/api/odr/wascarprice',
-        data: opts,
-        method: 'post'
-    })
-}

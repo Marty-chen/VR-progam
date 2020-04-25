@@ -3,38 +3,38 @@
   <view class="status_banner">
     <view class="status_text">
       <view class="status_text_top">
-        <text>卖家已发货</text>
-        <!-- <text>交易成功</text>
-        <text>交易关闭</text>
-        <text>买家已付款</text>
-        <text>等待买家付款</text> -->
+        <text wx:if="{{orderDetail.status<1}}">等待买家付款</text>
+        <text wx:if="{{orderDetail.status==1}}">买家已付款</text>
+        <text wx:if="{{orderDetail.status==2}}">卖家已发货</text>
+        <text wx:if="{{orderDetail.status==3 || orderDetail.status==4}}">交易成功</text>
+        <text wx:if="{{orderDetail.status==5}}">交易关闭</text>
       </view>
       <view class="status_time">
-        <text>剩5天23小时自动确认</text>
-        <!-- <text>剩5天23小时自动关闭</text> -->
+        <text wx:if="{{orderDetail.status==0 && orderDetail.payCloseTime}}">剩{{orderDetail.payCloseTime}}自动关闭</text>
+        <text wx:if="{{orderDetail.status==2 && orderDetail.surplusTime}}">剩{{orderDetail.surplusTime}}自动确认</text>
       </view>
     </view>
     <view class="status_img">
-      <image src="/assets/images/receiving_goods_icon.png" mode="widthFix" />
-      <!-- <image src="/assets/images/payment_order_icon.png" mode="widthFix"/>  
-      <image src="/assets/images/dea_order_icon.png" mode="widthFix"/> 
-      <image src="/assets/images/shipped_order_icon.png" mode="widthFix"/> 
-      <image src="/assets/images/close_order_icon.png" mode="widthFix"/>  -->
+      <image wx:if="{{orderDetail.status==0}}" src="/assets/images/payment_order_icon.png" mode="widthFix"/> 
+      <image wx:if="{{orderDetail.status==1}}" src="/assets/images/shipped_order_icon.png" mode="widthFix"/>
+      <image wx:if="{{orderDetail.status==2}}" src="/assets/images/receiving_goods_icon.png" mode="widthFix" /> 
+      <image wx:if="{{orderDetail.status==3 || orderDetail.status==4}}" src="/assets/images/dea_order_icon.png" mode="widthFix"/> 
+      <image wx:if="{{orderDetail.status==5}}" src="/assets/images/close_order_icon.png" mode="widthFix"/> 
     </view>
   </view>
   <!-- 地址栏 -->
   <view class="address">
-    <view class="has_addr" bindtap="handleChangeAddr">
+    <view class="has_addr">
       <view class="addre_info">
         <view class="name_phone">
-          <text>小白</text>
-          <text>13585545458</text>
+          <text>{{orderDetail.userName}}</text>
+          <text>{{orderDetail.phone}}</text>
         </view>
-        <view class="addr_detail">广东省东莞市 长安镇长青南路1号</view>
+        <view class="addr_detail">{{orderDetail.disName}}{{orderDetail.detailAddress}}</view>
       </view>
-      <view class="next_icon ilb">
+      <!-- <view class="next_icon ilb">
         <image src="/assets/images/next_step_icon.png" mode="widthFix" />
-      </view>
+      </view> -->
     </view>
   </view>
   <!-- 颜色线 -->
@@ -44,40 +44,47 @@
 
   <!-- 商品 -->
   <view class="orders">
-    <view wx:for="{{2}}" wx:key="*this" class="order_item">
+    <view wx:for="{{orderDetail.items}}" wx:key="index" class="order_item">
       <view class="produ">
         <view class="pro_left">
           <view class="produ_img bgimg ilb"
-            style="background-image: url('/assets/images/swiper/55.png');">
+            style="background-image: url('{{item.gdsImg}}');">
           </view>
           <view class="produ_info ilb">
-            <view class="name">汽车头枕靠枕车用车载颈椎枕头护颈枕腰</view>
-            <view class="pro_color">颜色: 黑色</view>
+            <view class="name">{{item.gdstitle}}</view>
+            <view class="pro_color">
+              <van-tag 
+              class="van_tag" 
+              wx:for="{{item.skuValue}}" 
+              wx:key="ii" wx:for-item="l" 
+              wx:for-index="ii"
+              color="#f2f2f2" 
+              text-color="#999">{{l.skuName}}：{{l.valueName}}</van-tag></view>
           </view>
         </view>
         <view class="pro_right">
-          <view class="pro_price">￥<text>128.00</text></view>
-          <view class="pro_num">x 1</view>
+          <view class="pro_price">￥<text>{{item.price}}</text></view>
+          <view class="pro_num">x {{item.qty}}</view>
         </view>
       </view>
-      <navigator url="/pages/refund/index" class="btns" hover-class="none" open-type="navigate">
-        <button>退款</button>
-      </navigator>     
+      <view class="btns" wx:if="{{orderDetail.status==1 || orderDetail.status==2 || orderDetail.status==3}}">
+        <button bindtap="handleToRefund" data-order="{{item}}">退款</button>
+      </view>     
     </view>
   </view>
   <!-- 订单总价 -->
   <view class="total_price bdb">
     <view class="cells">
       <view class="cells_title">商品总价</view>
-      <view class="cells_price">￥256.00</view>
+      <view class="cells_price">￥{{orderDetail.totalAmount}}</view>
     </view>
     <view class="cells">
       <view class="cells_title">运费</view>
-      <view class="cells_price">￥0.00</view>
+      <view class="cells_price">￥{{orderDetail.postage}}</view>
     </view>
     <view class="cells">
       <view class="cells_title">订单备注</view>
-      <view class="cells_price">尽快发货</view>
+      <view class="cells_price">{{orderDetail.note}}</view>
     </view>
   </view>
   <!-- 订单信息 -->
@@ -90,16 +97,16 @@
     <view class="cells_nobtw">
       <view class="cells_nobtw_title">
         <text>订单编号:</text>
-        1215485712488900
+        {{orderDetail.code}}
       </view>
-      <view class="copy_img" bindtap="handleCopy" data-order_num="35443534553">
+      <view class="copy_img" bindtap="handleCopy" data-order_num="{{orderDetail.code}}">
         <image src="/assets/images/copy_icon.png" mode="widthFix" />
       </view>
     </view>
     <view class="cells_nobtw">
       <view class="cells_nobtw_title">
         <text>下单时间:</text>
-        2020-2-16 19:01
+        {{orderDetail.createTime}}
       </view>
     </view>
   </view>
@@ -109,9 +116,12 @@
   </view>
 
   <view class="bottom_btns">
-    <button>提醒发货</button>
-    <button bindtap="handleShowCancel">取消订单</button>
-    <button class="red_btn">批量退款</button>
+    <button wx:if="{{orderDetail.status==1}}">提醒发货</button>
+    <button wx:if="{{orderDetail.status==4 || orderDetail.status==5}}" bindtap="handleDelOrder">删除订单</button>
+    <button wx:if="{{orderDetail.status==0}}" bindtap="handleShowCancel">取消订单</button>
+    <button wx:if="{{orderDetail.items.length>1 && (orderDetail.status==1 || orderDetail.status==2 || orderDetail.status==3)}}">批量退款</button>
+    <button wx:if="{{orderDetail.status==2}}" class="red_btn">确认收货</button>
+    <button wx:if="{{orderDetail.status==0}}" class="red_btn">去付款</button>
   </view>
 
 
@@ -122,7 +132,7 @@
       <view class="popup-title">
         <text>取消订单</text>
       </view>
-      <van-radio-group value="{{ cancelRadio }}" bind:change="onChange">
+      <van-radio-group value="{{ cancelRadio }}" >
         <van-cell-group>
           <van-cell title="我不想要了" clickable data-name="1" bindtap="onClick">
             <van-radio checked-color="#CE0000" slot="right-icon" name="1" />
@@ -139,7 +149,7 @@
         </van-cell-group>
       </van-radio-group>
       <view class="popup-btns">
-        <button class="cfbtn">确定</button>
+        <button bindtap="handleCancelOrder" class="cfbtn">确定</button>
       </view>
     </view>
   </van-popup>

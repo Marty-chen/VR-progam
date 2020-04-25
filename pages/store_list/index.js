@@ -159,16 +159,16 @@ Page({
         this.handleClearData();
     },
     //监听搜索框输入
-  handleSearchInput(e) {
-    this.setData({
-        searchShopName: e.detail
-    })
-  },
-  //监听搜索框失去焦点事件
-  handleSearchBlur(){
-    if(this.data.searchShopName) return
-    this.handleClearData()
-  },
+    handleSearchInput(e) {
+        this.setData({
+            searchShopName: e.detail
+        })
+    },
+    //监听搜索框失去焦点事件
+    handleSearchBlur() {
+        if (this.data.searchShopName) return
+        this.handleClearData()
+    },
     //清除搜索框内容
     handleClearSearch() {
         this.data.searchShopName = ''

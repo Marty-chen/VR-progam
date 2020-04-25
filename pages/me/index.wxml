@@ -26,7 +26,7 @@
     </navigator>
   </view>
 
-  <view class="cells bdb" style="height: 116rpx;">
+  <view bindtap="handleCall" class="cells bdb" style="height: 116rpx;">
     <!-- <navigator url="" open-type="navigate"> -->
       <view class="icon ilb">
         <image src="/assets/images/my_cooperation_icon.png" mode="widthFix" />
@@ -45,7 +45,7 @@
   </view>
 
   <view class="cells">
-    <navigator url="" hover-class="none" open-type="navigate">
+    <navigator url="/pages/me/about/index" hover-class="none" open-type="navigate">
       <view class="icon ilb">
         <image src="/assets/images/my_about_us_icon.png" mode="widthFix" />
       </view>

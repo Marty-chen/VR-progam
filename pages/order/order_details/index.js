@@ -1,4 +1,5 @@
 // pages/order/order_details/index.js
+import { order_detail,order_cancel,order_del } from "../../../network/order"
 Page({
 
   /**
@@ -6,13 +7,23 @@ Page({
    */
   data: {
     isShowCancel: false,
-    cancelRadio: '1'
+    cancelRadio: '1',
+    orderDetail: ''
   },
-
+  //去退款页面
+  handleToRefund(e) {
+    let goods = [e.currentTarget.dataset.order];
+    wx.navigateTo({
+      url: '/pages/refund/index',
+      success: function(res){
+        // 通过eventChannel向被打开页面传送数据
+        res.eventChannel.emit('acceptDataFromOpenerPage', { goods })
+      }
+    })
+  },
 
   //复制订单编号
   handleCopy(e) {
-    // console.log(e.currentTarget.dataset.order_num)
     wx.setClipboardData({
       data: e.currentTarget.dataset.order_num
     })
@@ -30,12 +41,6 @@ Page({
     });
   },
       //取消订单选择
-      onChange(event) {
-        this.setData({
-            cancelRadio: event.detail
-        });
-        console.log(this.data.cancelRadio)
-    },
     onClick(event) {
       const {
           name
@@ -45,11 +50,52 @@ Page({
           cancelRadio: name
       });
   },
+  //取消订单
+  handleCancelOrder() {
+    order_cancel(this.data.orderDetail.orderId).then(res=>{
+      wx.showToast({
+        title: '取消成功',
+        icon: 'success'
+      })
+      setTimeout(()=>{
+        wx.switchTab({
+          url: '/pages/order/index'
+        })
+      },1000)
+      
+    })
+  },
+  //删除订单
+  handleDelOrder() {
+    order_del(this.data.orderDetail.orderId).then(res=>{
+      wx.showToast({
+        title: '删除成功',
+        icon: 'success'
+      })
+      setTimeout(()=>{
+        wx.switchTab({
+          url: '/pages/order/index'
+        })
+      },1000)
+    })
+  },
+  //查询后台订单详情数据
+  getOrderDetail() {
+    let id = {orderId: this.data.orderId}
+    order_detail(id).then(res=>{
+      this.setData({
+        orderDetail: res.data
+      })
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options.orderId)
+    this.data.orderId = options.orderId;
+    this.getOrderDetail()
   },
 
   /**

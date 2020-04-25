@@ -96,14 +96,13 @@ Page({
   //选择地址
   handleChooseAddr(e) {
     let addr = e.currentTarget.dataset.addr;
-    console.log(addr)
+    // console.log(addr)
     let router = getCurrentPages()
-
+    console.log(router[1].route)
     //判断是否在购物车跳转过来的
-    if (router[1].route == "pages/cart/confirm_order/index") {
-      console.log(router[1].route)
+    if (router[1].route == "pages/cart/confirm_order/index" || router[1].route == "pages/goods_details/confirm_order/index") {
+      
       // 将参数传回上一页
-      // const pages = getCurrentPages()
       const prevPage = router[router.length - 2] // 上一页
       // 调用上一个页面的setData 方法，将数据存储
       prevPage.setData({
@@ -114,6 +113,7 @@ Page({
         delta: 1
       })
     }
+    
   },
 
   //网络请求地址列表

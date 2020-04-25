@@ -1,0 +1,31 @@
+/* pages/notice_pages/payment_success/index.wxss */
+.wrapper {
+  text-align: center;
+}
+.icon_img {
+  width: 408rpx;
+  display: inline-block;
+  margin: 150rpx 0 50rpx 0;
+}
+.btns {
+  margin-top: 200rpx;
+  padding-bottom: 100rpx;
+}
+.btns button {
+  margin-bottom: 40rpx;
+}
+
+.home_btn {
+  background-color: #fff;
+  color: #333;
+  border: 1rpx solid #ccc;
+}
+
+
+
+
+
+
+
+
+

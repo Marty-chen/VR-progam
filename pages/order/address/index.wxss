@@ -1,0 +1,58 @@
+/* pages/me/address/index.wxss */
+.wrapper {
+  padding-bottom: 100rpx;
+}
+
+.address_item {
+  padding: 32rpx;
+}
+.cards_check_icon {
+  width: 32rpx;
+  vertical-align: middle;
+  margin-right: 20rpx;
+}
+.address_box {
+  vertical-align: middle;
+  width: 560rpx;
+}
+
+.name_phone {
+  margin-bottom: 10rpx;
+}
+
+.name_phone text {
+  margin-right: 50rpx;
+}
+
+.address_detail {
+  font-size: 26rpx;
+  color: #999;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.handle_btns {
+  float: right;
+  margin-top: 30rpx;
+  font-size: 28rpx;
+}
+
+.default {
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 32rpx 40rpx 32rpx;
+  font-size: 24rpx;
+}
+.check_icon {
+  width: 32rpx;
+  vertical-align: middle;
+  margin-right: 20rpx;
+}
+
+.center_line {
+  color: #ccc;
+  margin: 0 40rpx;
+}
+.add_btn {
+  margin-top: 200rpx;
+}

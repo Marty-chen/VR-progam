@@ -1,0 +1,52 @@
+/* pages/order/change_address/index.wxss */
+.wrapper {
+  position: relative;
+}
+.address {
+  padding: 30rpx 32rpx 0rpx 32rpx;
+}
+
+.next_icon {
+  width: 12rpx;
+  vertical-align: middle;
+}
+.has_addr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.name_phone text {
+  margin-right: 50rpx;
+}
+.addr_detail {
+  font-size: 28rpx;
+  color: #999;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 10rpx;
+  max-width: 650rpx;
+}
+.line_img {
+  width: 100%;
+}
+
+.btns {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+.btns view{
+  width: 50%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  display: inline-block;
+}
+.cancel {
+  background-color: #F7F7F7;
+}
+.confirm {
+  background-color: var(--themeColor);
+  color: #fff;
+}

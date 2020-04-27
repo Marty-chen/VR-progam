@@ -48,12 +48,36 @@
       <view class="btns">
         <button bindtap="handleToOrderDetail" data-orderid="{{item.orderId}}">订单详情</button>
         <button wx:if="{{item.status==1}}">提醒发货</button>
-        <button wx:if="{{item.status==0}}">取消订单</button>
-        <button wx:if="{{item.status==4 || item.status==5}}">删除订单</button>
-        <button wx:if="{{item.status==0}}" class="red_color">去付款</button>
-        <button wx:if="{{item.status==2}}" class="red_color">确定收货</button>
+        <button wx:if="{{item.status==0}}" bindtap="handleShowCancel" data-id="{{item.orderId}}">取消订单</button>
+        <button wx:if="{{item.status==5}}" bindtap="handleDelOrder" data-id="{{item.orderId}}">删除订单</button>
+        <button wx:if="{{item.status==0}}" bindtap="handleToAddrList" data-id="{{item.orderId}}">修改地址</button>
+        <button wx:if="{{item.status==0}}" bindtap="handleTopayment" data-id="{{item.orderId}}" class="red_color">去付款</button>
+        <button wx:if="{{item.status==2}}" bindtap="handleConfirmTakeOrder" data-id="{{item.orderId}}" class="red_color">确认收货</button>
       </view>
     </view>
+
+    <view wx:if="{{showNoMore}}" class="no_more">没有更多数据了哦</view>
   </view>
+
+  <van-popup show="{{ isShowCancel }}" closeable round close-icon-position="top-left" position="bottom"
+    bind:close="onCloseCancel">
+    <view class="popup-wraper">
+      <view class="popup-title">
+        <text>取消订单</text>
+      </view>
+      <van-radio-group value="{{ reasonId }}" >
+        <van-cell-group>
+          <block wx:for="{{reasonList}}" wx:key="index">
+            <van-cell title="{{item.name}}" clickable data-name="{{item.reasonId}}" bindtap="onClick">
+              <van-radio checked-color="#CE0000" slot="right-icon" name="{{item.reasonId}}" />
+            </van-cell>
+          </block>
+        </van-cell-group>
+      </van-radio-group>
+      <view class="popup-btns">
+        <button bindtap="handleCancelOrder" class="cfbtn">确定</button>
+      </view>
+    </view>
+  </van-popup>
 
 </view>

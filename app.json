@@ -7,6 +7,8 @@
     "pages/cart/confirm_order/index",
     "pages/order/index",
     "pages/order/order_details/index",
+    "pages/order/address/index",
+    "pages/order/change_address/index",
     "pages/refund/index",
     "pages/refund/refund_details/index",
     "pages/goods_list/index",

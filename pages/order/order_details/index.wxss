@@ -121,16 +121,16 @@
   text-align: right;
 }
 .btns button {
-  width: 180rpx;
-  height: 60rpx;
-  line-height: 60rpx;
+  display: inline-block; 
+  font-size: 24rpx;
+  height: 50rpx;
+  line-height: 50rpx;
   border-radius: 30rpx;
+  margin-left: 20rpx;
+  padding: 0 20rpx;
   background-color: #fff;
   border: 1rpx solid #999;
-  font-size: 28rpx;
   color: #999;
-  display: inline-block;
-  margin-left: 30rpx;
 }
  button::after {
   border: none;
@@ -201,16 +201,16 @@
 }
 
 .bottom_btns button {
-  width: 180rpx;
-  height: 60rpx;
-  line-height: 60rpx;
+  display: inline-block; 
+  font-size: 24rpx;
+  height: 50rpx;
+  line-height: 50rpx;
   border-radius: 30rpx;
+  margin-left: 20rpx;
+  padding: 0 20rpx;
   background-color: #fff;
   border: 1rpx solid #999;
-  font-size: 28rpx;
   color: #999;
-  display: inline-block;
-  margin-left: 30rpx;
 }
 .bottom_btns .red_btn {
   color: var(--themeColor);
@@ -228,6 +228,7 @@
 
 .van_tag {
   margin-right: 20rpx;
+ 
 }
 
 

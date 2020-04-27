@@ -102,14 +102,6 @@ Page({
         delta: 1
       })
     }, 2000)
-    
-    // let router = getCurrentPages()
-    // console.log(router)
-    // //判断是否在购物车跳转过来的
-    // if (router[1].route == "pages/cart/confirm_order/index") {
-
-    // }
-
   },
 
   //点下一步，验证数据有没填写完整

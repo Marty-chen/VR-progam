@@ -1,0 +1,34 @@
+<!--pages/me/address/index.wxml-->
+<view class="wrapper">
+  <view class="address">
+    <view wx:for="{{addrList}}" wx:key="index" class="item_box">
+      <view class="address_item">
+        <view class="cards_check_icon ilb" bindtap="handleCheckGoods" data-index="{{index}}">
+          <image wx:if="{{item.check}}" src="/assets/images/choose_click_icon_02.png" mode="widthFix" />
+          <image wx:else src="/assets/images/choose_default_icon.png" mode="widthFix" />
+        </view>
+  
+        <view bindtap="handleChooseAddr" data-addr="{{item}}" class="address_box ilb">
+          <view class="name_phone">
+            <text>{{item.userName}}</text>
+            <text>{{item.phone}}</text>
+          </view>
+          <view class="address_detail">{{item.disName + item.detailAddress}}</view>
+        </view>
+  
+        <view class="handle_btns ilb">
+          <text bind:tap="handleEditAddr" data-index="{{index}}">编辑</text>
+        </view>
+      </view>
+      
+      <view class="addr_line">
+        <image src="/assets/images/line.png" mode="widthFix"/>
+      </view>
+    </view>
+  </view>
+
+
+  <view class="add_btn">
+    <button bindtap="toNewAddress" class="cfbtn">添加地址</button>
+  </view>
+</view>

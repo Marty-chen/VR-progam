@@ -160,7 +160,7 @@
 					"id": 14,
 					"name": "订单详情",
 					"pathName": "pages/order/order_details/index",
-					"query": "orderId= 1253626149304930306",
+					"query": "orderId= 1252868301147058178",
 					"scene": null
 				},
 				{
@@ -203,6 +203,20 @@
 					"name": "交易成功",
 					"pathName": "pages/notice_pages/deal_done/index",
 					"query": "orderId=2",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "订单选择地址列表",
+					"pathName": "pages/order/address/index",
+					"query": "orderId= 1252868301147058178",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "订单修改地址",
+					"pathName": "pages/order/change_address/index",
+					"query": "orderId= 1252868301147058178",
 					"scene": null
 				}
 			]

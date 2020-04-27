@@ -68,11 +68,10 @@ Page({
           },
           fail:err=> {
             console.log(err)
-            wx.showToast({
-              title: "支付失败,请重新支付",
-              icon: "none",
-              duration: 2000
-            })
+              //跳转到订单详情页面
+              wx.reLaunch({
+                url: '/pages/order/order_details/index?orderId='+ order.orderId
+              })
           }
         })
     })

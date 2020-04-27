@@ -1,0 +1,29 @@
+<!--pages/order/change_address/index.wxml-->
+<view class="wrapper">
+  <!-- 地址栏 -->
+  <view class="address" bindtap="handleToChooseAddr">
+    <view class="has_addr">
+      <view class="addre_info">
+        <view class="name_phone">
+          <text>{{orderDetail.userName}}</text>
+          <text>{{orderDetail.phone}}</text>
+        </view>
+        <view class="addr_detail">{{orderDetail.disName}}{{orderDetail.detailAddress}}</view>
+      </view>
+      <view class="next_icon ilb">
+        <image src="/assets/images/next_step_icon.png" mode="widthFix" />
+      </view>
+    </view>
+  </view>
+  <!-- 颜色线 -->
+  <view class="line_img">
+    <image src="/assets/images/line.png" mode="widthFix" />
+  </view>
+
+<view class="btns">
+  <view bindtap="handleCancel" class="cancel">取消</view>
+  <view bindtap="handleConfirm" class="confirm">提交</view>
+</view>
+
+
+</view>

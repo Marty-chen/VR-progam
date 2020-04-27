@@ -35,3 +35,47 @@ export function order_del(opts) {
     })
 }
 
+// 退款理由列表
+export function order_reason(opts) {
+    return request({
+        url: '/api/odr/reason',
+        data: opts,
+        method: 'post'
+    })
+}
+
+// 确认收货
+export function order_confirmTake(opts) {
+    return request({
+        url: '/api/odr/confirmTake',
+        data: opts,
+        method: 'post'
+    })
+}
+
+// 去付款
+export function order_payment(opts) {
+    return request({
+        url: '/api/odr/payment',
+        data: opts,
+        method: 'post'
+    })
+}
+// 修改地址
+export function order_changeAddr(opts) {
+    return request({
+        url: '/api/odr/cancel',
+        data: opts,
+        method: 'post'
+    })
+}
+
+// 获取订单地址
+export function order_addr(opts) {
+    return request({
+        url: '/api/odr/address',
+        data: opts,
+        method: 'post'
+    })
+}
+

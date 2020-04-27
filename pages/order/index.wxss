@@ -28,6 +28,10 @@
   padding: 0 32rpx;
   border-bottom: 1rpx solid #e5e5e5;
 }
+.order_item:nth-last-child(1) {
+  border: none;
+}
+
 .pro_price {
   font-size: 28rpx;
 }
@@ -101,16 +105,16 @@
   text-align: right;
 }
 .btns button {
-  width: 180rpx;
-  height: 60rpx;
-  line-height: 60rpx;
+  display: inline-block; 
+  font-size: 24rpx;
+  height: 50rpx;
+  line-height: 50rpx;
   border-radius: 30rpx;
+  margin-left: 20rpx;
+  padding: 0 20rpx;
   background-color: #fff;
   border: 1rpx solid #999;
-  font-size: 28rpx;
   color: #999;
-  display: inline-block;
-  margin-left: 30rpx;
 }
 .btns button::after {
   border: none;
@@ -122,4 +126,21 @@
 
 .van_tag {
   margin-right: 20rpx;
+}
+
+.popup-title {
+  text-align: center;
+  margin: 40rpx 0 50rpx 0;
+}
+
+.popup-btns {
+  margin: 100rpx 0 60rpx 0;
+}
+
+.no_more {
+  font-size: 24rpx;
+  color: #999;
+  background-color: #f7f7f7;
+  text-align: center;
+  padding: 10rpx 0;
 }

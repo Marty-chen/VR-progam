@@ -30,18 +30,20 @@ Page({
                     };
                     // console.log(loginData);
                     userLogin(loginData).then(res => {
+                        console.log(res.data)
                         wx.setStorageSync('userInfo', userInfo.userInfo);
                         wx.setStorageSync('token', res.data.token);
+                        wx.setStorageSync('key', res.data.key);
                         wx.showToast({
                             title: "登录成功",
                             icon: 'success',
-                            duration: 2000
+                            duration: 1000
                         })
                         setTimeout(() => {
                             wx.navigateBack({
                                 delta: 1, // 回退前 delta(默认为1) 页面
                             })
-                        }, 2000)
+                        }, 1000)
                     })
                 }
             })

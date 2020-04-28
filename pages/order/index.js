@@ -221,11 +221,10 @@ Page({
   //取消订单选择
   onClick(event) {
     const reasonId = event.currentTarget.dataset.name;
-
     this.setData({
       reasonId
     });
-    console.log(this.data.reasonId)
+    // console.log(this.data.reasonId)
   },
   //取消订单
   handleCancelOrder() {
@@ -246,7 +245,6 @@ Page({
         this.data.orderList = [];
         this.getOrderList()
       }, 1000)
-
     })
   },
   //获取后台数据
@@ -267,7 +265,8 @@ Page({
   },
   //获取退款理由列表
   getReasonList() {
-    order_reason().then(res => {
+    let type = 0;
+    order_reason(type).then(res => {
       this.setData({
         reasonList: res.data
       })

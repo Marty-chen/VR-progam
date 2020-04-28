@@ -32,9 +32,9 @@
         </view>
         <view class="addr_detail">{{orderDetail.disName}}{{orderDetail.detailAddress}}</view>
       </view>
-      <!-- <view class="next_icon ilb">
+      <view wx:if="{{orderDetail.status==0}}" bindtap="handleToAddrList" data-id="{{orderDetail.orderId}}" class="next_icon ilb">
         <image src="/assets/images/next_step_icon.png" mode="widthFix" />
-      </view> -->
+      </view>
     </view>
   </view>
   <!-- 颜色线 -->
@@ -59,7 +59,8 @@
               wx:key="ii" wx:for-item="l" 
               wx:for-index="ii"
               color="#f2f2f2" 
-              text-color="#999">{{l.skuName}}：{{l.valueName}}</van-tag></view>
+              text-color="#999">{{l.skuName}}：{{l.valueName}}</van-tag>
+            </view>
           </view>
         </view>
         <view class="pro_right">
@@ -117,6 +118,7 @@
 
   <view class="bottom_btns">
     <button wx:if="{{orderDetail.status==1}}">提醒发货</button>
+    <button wx:if="{{orderDetail.status==0}}" bindtap="handleToAddrList" data-id="{{orderDetail.orderId}}">修改地址</button>
     <button wx:if="{{orderDetail.status==5}}" bindtap="handleDelOrder">删除订单</button>
     <button wx:if="{{orderDetail.status==0}}" bindtap="handleShowCancel">取消订单</button>
     <button wx:if="{{orderDetail.items.length>1 && (orderDetail.status==1 || orderDetail.status==2 || orderDetail.status==3)}}">批量退款</button>

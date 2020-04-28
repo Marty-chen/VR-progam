@@ -75,6 +75,7 @@ export function goods_createOrder(opts) {
     return request({
         url: '/api/odr/createOrder',
         data: opts,
-        method: 'post'
+        method: 'post',
+        sign: true
     })
 }

@@ -8,7 +8,7 @@
           <image wx:else src="/assets/images/choose_default_icon.png" mode="widthFix" />
         </view>
   
-        <view bindtap="handleChooseAddr" data-addr="{{item}}" class="address_box ilb">
+        <view bindtap="handleChooseAddr" data-index="{{index}}" class="address_box ilb">
           <view class="name_phone">
             <text>{{item.userName}}</text>
             <text>{{item.phone}}</text>

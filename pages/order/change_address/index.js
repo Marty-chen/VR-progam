@@ -38,10 +38,15 @@ handleToChooseAddr() {
 
   //确定修改地址
   handleConfirm() {
+    if(!this.data.addr.addressId) {
+      return wx.showToast({ title: '地址没有变化,不需要提交',icon: 'none'});
+        
+    }
     let parm = {
       addressId: this.data.addr.addressId,
       orderId: this.data.orderId
     }
+    console.log(parm)
     order_changeAddr(parm).then(res=>{
       wx.showToast({
         title: '修改地址成功',
@@ -52,14 +57,16 @@ handleToChooseAddr() {
         wx.navigateBack({
           delta: 1 // 回退前 delta(默认为1) 页面
         })
-      },1000)  
+      },2000)  
     })
   },
 
   //获取后台数据
   getAddr() {
     order_addr(this.data.orderId).then(res=>{
-//////////////////////////////////////
+      this.setData({
+        addr: res.data
+      })
     })
   },
   /**
@@ -81,13 +88,7 @@ handleToChooseAddr() {
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    const pages = getCurrentPages()
-    const currPage = pages[pages.length - 1] // 当前页
-    console.log(currPage.data) // data中会含有testdata
-    // console.log(this.data.addr)
-    // this.setData({
-    //   addr: currPage.data.addr
-    // })
+    
   },
 
   /**

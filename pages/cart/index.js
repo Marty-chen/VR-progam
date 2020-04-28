@@ -1,7 +1,8 @@
 // pages/cart/index.js
 import {
   cart_list,
-  cart_update
+  cart_update,
+  del_Order
 } from "../../network/cart"
 Page({
 
@@ -64,34 +65,13 @@ Page({
       this.setData({
         [qty]: e.detail
       })
-      if(this.data.cartList[index].check) {
+      if (this.data.cartList[index].check) {
         this.getToatl()
       }
     })
-    
-  },
-  //去结算
-  handleToConfirmOrder() {
-    let checkGoods = this.data.cartList.filter(i => i.check)
-    if(checkGoods.length == 0) {
-      return wx.showToast({
-        title: '请选择商品',
-        icon: 'none'
-      })
-    }
-    let cartIds = [];
-    checkGoods.forEach(i=>{
-      cartIds.push(i.cartId)
-    })
 
-    wx.navigateTo({
-      url: '/pages/cart/confirm_order/index',
-      success: function(res) {
-        // 通过eventChannel向被打开页面传送数据
-        res.eventChannel.emit('acceptDataFromOpenerPage', { cartIds })
-      }
-    })
   },
+
 
   //计算总件数和总价格
   getToatl() {
@@ -109,6 +89,65 @@ Page({
     })
   },
 
+  //去结算
+  handleToConfirmOrder() {
+    let checkGoods = this.data.cartList.filter(i => i.check)
+    if (checkGoods.length == 0) {
+      return wx.showToast({
+        title: '请选择商品',
+        icon: 'none'
+      })
+    }
+    let cartIds = [];
+    checkGoods.forEach(i => {
+      cartIds.push(i.cartId)
+    })
+
+    wx.navigateTo({
+      url: '/pages/cart/confirm_order/index',
+      success: function (res) {
+        // 通过eventChannel向被打开页面传送数据
+        res.eventChannel.emit('acceptDataFromOpenerPage', {
+          cartIds
+        })
+      }
+    })
+  },
+
+  // 删除购物车商品
+  handleDelOrder() {
+    wx.showModal({
+      title: '',
+      content: '您确定要删除选中的商品?',
+      showCancel: true,
+      cancelText: '取消',
+      cancelColor: '#000000',
+      confirmText: '确定',
+      success: (result) => {
+        if (result.confirm) {
+          let checkGoods = this.data.cartList.filter(i => i.check)
+          let cartIds = [];
+          checkGoods.forEach(i => {
+            cartIds.push(i.cartId)
+          })
+          console.log(cartIds)
+          del_Order(cartIds).then(res=>{
+            wx.showToast({
+              title: '删除成功',
+              icon: 'success',
+              duration: 1500,
+            });
+             setTimeout(()=>{
+              this.getCartList()
+             },300) 
+          })
+        }
+      }
+    });
+
+  },
+
+
   //请求购物车列表数据
   getCartList() {
     cart_list(this.data.parm).then(res => {
@@ -120,12 +159,13 @@ Page({
         cartList.push(i)
       })
       // console.log(cartList)
-      cartList.forEach((item,index)=>{
+      cartList.forEach((item, index) => {
         item.price = item.price.toFixed(2)
       })
       this.setData({
         cartList,
-        pages: res.data.pages
+        pages: res.data.pages,
+        isAllCheck: false
       })
     })
   },
@@ -133,7 +173,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+
   },
 
   /**
@@ -148,6 +188,7 @@ Page({
    */
   onShow: function () {
     this.getCartList()
+
   },
 
   /**

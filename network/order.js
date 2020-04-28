@@ -64,7 +64,7 @@ export function order_payment(opts) {
 // 修改地址
 export function order_changeAddr(opts) {
     return request({
-        url: '/api/odr/cancel',
+        url: '/api/odr/editAddress',
         data: opts,
         method: 'post'
     })

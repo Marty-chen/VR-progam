@@ -1,13 +1,21 @@
 // pages/refund/index.js
+import {
+  order_reason
+} from "../../network/order"
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    goods:[],
+    goods: [],
     isShowCancel: false,
-    cancelRadio: '1'
+    reasonId: '',
+    reasonList: [], //退款理由列表
+    reason_name: '',
+    totalPrice: 0,
+    refundExplain: '',
+    orderId: ''
   },
 
 
@@ -21,31 +29,50 @@ Page({
   /** 点击显示弹层 */
   handleShowCancel() {
     this.setData({
-        isShowCancel: true
+      isShowCancel: true
     });
-},
-   /** 点击关闭弹层 */
-   onCloseCancel() {
+  },
+  /** 点击关闭弹层 */
+  onCloseCancel() {
     this.setData({
-        isShowCancel: false
+      isShowCancel: false
     });
   },
-      //取消订单选择
-      onChange(event) {
-        this.setData({
-            cancelRadio: event.detail
-        });
-        console.log(this.data.cancelRadio)
-    },
-    onClick(event) {
-      const {
-          name
-      } = event.currentTarget.dataset;
-      console.log(name)
-      this.setData({
-          cancelRadio: name
-      });
+  //退款理由选择
+  onClick(event) {
+    const reasonId = event.currentTarget.dataset.name;
+    this.setData({
+      reasonId
+    });
+    console.log(this.data.reasonId)
   },
+  //退款理由确定
+  handleCancelOrder() {
+    let reason_name = this.data.reasonList.find(item=>item.reasonId == this.data.reasonId).name;
+    this.setData({
+      reason_name,
+      isShowCancel: false
+    })
+    console.log(reason_name)
+  },
+
+  //退款说明
+  bindKeyInput(e) {
+    console.log(e.detail.value)
+    this.data.refundExplain = e.detail.value;
+  },
+
+  //获取退款理由数据
+  getReason() {
+    let type = 1;
+    order_reason(type).then(res => {
+      this.setData({
+        reasonList: res.data
+      })
+    })
+  },
+
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -54,10 +81,19 @@ Page({
     // 监听acceptDataFromOpenerPage事件，获取上一页面通过eventChannel传送到当前页面的数据
     eventChannel.on('acceptDataFromOpenerPage', data => {
       console.log(data.goods)
+      let goods = data.goods;
+      let totalPrice = 0;
+      goods.forEach(item => {
+        totalPrice += item.price * item.qty
+      });
+      totalPrice = totalPrice.toFixed(2)
       this.setData({
-        goods: data.goods
+        orderId: goods[0].orderId,
+        goods,
+        totalPrice
       })
     })
+    this.getReason()
   },
 
   /**

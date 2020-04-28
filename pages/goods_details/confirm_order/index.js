@@ -93,7 +93,7 @@ Page({
       })
       this.setData({
         orderInfo,
-        addr: data.orderData.address
+        addr: orderInfo.address
       })
     })   
   },
@@ -113,9 +113,9 @@ Page({
     const currPage = pages[pages.length - 1] // 当前页
     // console.log(currPage.data) // data中会含有testdata
     // console.log(this.data.addr) 
-    // this.setData({
-    //   addr: currPage.data.addr
-    // })
+    this.setData({
+      addr: currPage.data.addr
+    })
   },
 
   /**

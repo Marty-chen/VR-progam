@@ -160,7 +160,7 @@
 					"id": 14,
 					"name": "订单详情",
 					"pathName": "pages/order/order_details/index",
-					"query": "orderId= 1252868301147058178",
+					"query": "orderId= 1253868542029598721",
 					"scene": null
 				},
 				{

@@ -63,7 +63,7 @@
         <view class="pay_btn ilb" bindtap="handleToConfirmOrder">结算</view>
       </view>
       <view wx:else class="check_out">
-        <view class="del_btn">删除</view>
+        <view bindtap="handleDelOrder" class="del_btn">删除</view>
       </view>
     </view>
   </view>

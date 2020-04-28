@@ -34,9 +34,12 @@ Page({
       title: '您确定退出登录？',
       success(res) {
         if (res.confirm) {
-          logout().then(res => { //告诉后台退出登陆
+          
+              //告诉后台退出登陆
+          logout().then(()=>{
               wx.removeStorageSync('token');
               wx.removeStorageSync('userInfo');
+              wx.removeStorageSync('key');
               wx.showToast({
                 title: "退出成功",
                 icon: 'success',
@@ -45,19 +48,8 @@ Page({
               _this.setData({
                 userInfo: ''
               })
-            })
-            .catch(err => {
-              wx.removeStorageSync('token');
-              wx.removeStorageSync('userInfo');
-              wx.showToast({
-                title: "退出成功",
-                icon: 'success',
-                duration: 2000
-              })
-              _this.setData({
-                userInfo: ''
-              })
-            })
+          })
+            
 
         } else if (res.cancel) {
           console.log('用户点击取消')
@@ -65,6 +57,8 @@ Page({
       }
     })
   },
+
+
   /**
    * 生命周期函数--监听页面加载
    */

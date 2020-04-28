@@ -5,10 +5,10 @@
     <view class="has_addr">
       <view class="addre_info">
         <view class="name_phone">
-          <text>{{orderDetail.userName}}</text>
-          <text>{{orderDetail.phone}}</text>
+          <text>{{addr.userName}}</text>
+          <text>{{addr.phone}}</text>
         </view>
-        <view class="addr_detail">{{orderDetail.disName}}{{orderDetail.detailAddress}}</view>
+        <view class="addr_detail">{{addr.disName}}{{addr.detailAddress}}</view>
       </view>
       <view class="next_icon ilb">
         <image src="/assets/images/next_step_icon.png" mode="widthFix" />

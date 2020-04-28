@@ -98,11 +98,11 @@ Page({
     let addr = e.currentTarget.dataset.addr;
     // console.log(addr)
     let router = getCurrentPages()
-    // console.log(router[1].route)
-    // 将参数传回上一页
-    const prevPage = router[router.length - 2] // 上一页
+    // console.log(router)
+    if(router[0].route == "pages/me/index") return
     //判断是否在购物车或者是商品详情跳转过来的
-    if (router[1].route == "pages/cart/confirm_order/index" || router[1].route == "pages/goods_details/confirm_order/index") {
+      // 将参数传回上一页
+    const prevPage = router[router.length - 2] // 上一页
       // 调用上一个页面的setData 方法，将数据存储
       prevPage.setData({
         addr
@@ -111,7 +111,6 @@ Page({
       wx.navigateBack({
         delta: 1
       })
-    }
   },
 
   //网络请求地址列表

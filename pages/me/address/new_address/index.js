@@ -12,7 +12,7 @@ Page({
   data: {
     isEditAddress: false,
     checked: false,
-    areaList: '',
+    areaList,
     isShowChooseCity: false,
     addFormData: {
       userName: '',
@@ -154,13 +154,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (option) {
-    this.setData({
-      areaList
-    })
+    
     const eventChannel = this.getOpenerEventChannel()
     // 监听acceptDataFromOpenerPage事件，获取上一页面通过eventChannel传送到当前页面的数据
     eventChannel.on('acceptDataFromOpenerPage', (data) => {
-      console.log(data.data.parm)
       let parm = data.data.parm;
       if(!parm) return
       //动态改变页面标题

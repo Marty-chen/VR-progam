@@ -43,7 +43,7 @@ Page({
       note: this.data.note,
       skus
     }
-    console.log(parm)
+    // console.log(parm)
     goods_createOrder(parm).then(res => {
       let order = res.data;
       console.log(order)
@@ -73,11 +73,7 @@ Page({
            wx.reLaunch({
             url: '/pages/order/order_details/index?orderId='+ order.orderId
           })
-          // wx.showToast({
-          //   title: "支付失败,请重新支付",
-          //   icon: "none",
-          //   duration: 2000
-          // })
+          
         }
       })
     })
@@ -85,6 +81,7 @@ Page({
   },
   //获取数据
   getConfirmOrder() {
+    console.log(this.data.cartIds)
     confirmOrder(this.data.cartIds).then(res => {
       let orderInfo = res.data;
       orderInfo.totalPostage = orderInfo.totalPostage.toFixed(2)
@@ -105,10 +102,12 @@ Page({
     const eventChannel = this.getOpenerEventChannel();
     // 监听acceptDataFromOpenerPage事件，获取上一页面通过eventChannel传送到当前页面的数据
     eventChannel.on('acceptDataFromOpenerPage', data => {
-      this.data.cartIds = data.cartIds
+      // console.log(data)
+      this.data.cartIds = data.cartIds;
+      this.getConfirmOrder()
     })
-    console.log(this.data.cartIds)
-    this.getConfirmOrder()
+   
+    
   },
 
   /**
@@ -124,7 +123,7 @@ Page({
   onShow: function () {
     const pages = getCurrentPages()
     const currPage = pages[pages.length - 1] // 当前页
-    console.log(currPage.data) // data中会含有testdata
+    // console.log(currPage.data)
     console.log(this.data.addr)
     // this.setData({
     //   addr: currPage.data.addr

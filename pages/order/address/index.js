@@ -1,9 +1,5 @@
 // pages/me/address/index.js
-import {
-  addressList,
-  addressUpdate,
-  deleteAdd
-} from "../../../network/address"
+import {addressList} from "../../../network/address"
 Page({
 
   /**
@@ -40,20 +36,30 @@ Page({
   },
   //选择地址
   handleChooseAddr(e) {
-    let addr = e.currentTarget.dataset.addr;
-    // console.log(addr)
+    let index = e.currentTarget.dataset.index;
+    let addrList = this.data.addrList;
+    addrList.forEach(item=>{
+      item.check = false
+    })
+    addrList[index].check = true;
+    this.setData({
+      addrList
+    })
+
+    let addr = this.data.addrList[index]
     let router = getCurrentPages()
-    console.log(router[1].route)
       // 将参数传回上一页
       const prevPage = router[router.length - 2] // 上一页
       // 调用上一个页面的setData 方法，将数据存储
       prevPage.setData({
         addr
       })
-      // 返回上一页
-      wx.navigateBack({
+     setTimeout(()=>{
+       // 返回上一页
+       wx.navigateBack({
         delta: 1
       })
+     },500)
     
     
   },
@@ -61,8 +67,12 @@ Page({
   //网络请求地址列表
   getAddressList() {
     addressList().then(res => {
+      let addrList = res.data;
+      addrList.forEach(item => {
+        item.check = false
+      });
       this.setData({
-        addrList: res.data
+        addrList
       })
     })
   },

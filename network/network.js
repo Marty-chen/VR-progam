@@ -3,22 +3,35 @@ import {
     timeout,
     head
 } from './config.js'
+import { signature } from "./sign.js"
 
 function request(options) {
     wx.showLoading({
         title: '加载中',
     })
-    let header = {
+    let  header;
+    let token = wx.getStorageSync('token');
+    // 设置请求头
+    if(token) {
+        header = {
             ...head,
-            token: wx.getStorageSync('token') || ''
+            token
         }
+    }
     
+    if(options.sign) {
+        let sign = signature(options.data)
+        console.log(sign)
+         header.sign = sign;
+    }
+    
+ 
     return new Promise((resolve, reject) => {
         wx.request({
             url: baseURL + options.url,
-            timeout: timeout,
+            timeout,
             data: options.data,
-            header: header,
+            header,
             method: options.method,
             success: res=> {
                 console.log(res.data)
@@ -29,7 +42,7 @@ function request(options) {
                     }, 10)
                 } else {
                     wx.showToast({
-                        title: res.data.msg,
+                        title: res.data.message,
                         icon: 'none',
                         duration: 1500
                     })
@@ -44,7 +57,7 @@ function request(options) {
                     //     }, 1000)
                     //     return
                     // }
-                    reject(res.data)
+                    reject(res)
                 }
             },
             fail: err => {

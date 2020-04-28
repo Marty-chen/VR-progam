@@ -56,7 +56,7 @@ Page({
     this.setData({
       reasonId
     });
-    console.log(this.data.reasonId)
+    // console.log(this.data.reasonId)
   },
   //取消订单
   handleCancelOrder() {
@@ -172,12 +172,17 @@ Page({
             this.getOrderDetail()
           })
         }
-      },
-      fail: () => {}
+      }
     });
   },
 
-
+//去修改地址
+handleToAddrList(e) {
+  let orderId = e.currentTarget.dataset.id;
+  wx.navigateTo({
+    url: '/pages/order/change_address/index?orderId=' + orderId
+  })
+},
 
 
   //查询后台订单详情数据
@@ -193,7 +198,8 @@ Page({
   },
   //获取退款理由列表
   getReasonList() {
-    order_reason().then(res => {
+    let type = 0
+    order_reason(type).then(res => {
       this.setData({
         reasonList: res.data
       })
@@ -207,7 +213,6 @@ Page({
   onLoad: function (options) {
     console.log(options.orderId)
     this.data.orderId = options.orderId;
-    this.getOrderDetail()
     this.getReasonList()
   },
 
@@ -222,7 +227,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getOrderDetail()
   },
 
   /**

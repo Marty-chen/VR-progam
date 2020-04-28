@@ -25,3 +25,12 @@ export function confirmOrder(opts) {
         method: 'post'
     })
 }
+
+//确认订单页面
+export function del_Order(opts) {
+    return request({
+        url: '/api/ship/cart/del',
+        data: opts,
+        method: 'post'
+    })
+}
